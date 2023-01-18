@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+.hov:hover{
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.heading{
+  font-family: ProximaNovaA-Regular;
+ color: rgb(68, 68, 68);
+text-align: center;
+font-size: 24px;
+border-bottom:1px solid #e1e1e1;
+margin-top: 22px;
+margin-bottom: 10px;
+padding: 10px;
+}
