@@ -6,6 +6,7 @@ import { FaShoppingBasket } from "react-icons/fa"
 import lo from "../../src/prologo.png"
 
 import "../Styles/Navbar.css"
+import { NavLink } from "react-router-dom"
 
 const Navbar = () => {
     return (
@@ -18,21 +19,21 @@ const Navbar = () => {
                     <input id="input" type="text" placeholder="Search for Product..." />
                     <img id="searchlogo" src="search.png" alt="" />
                 </div>
-                <div id="basket">
+                <NavLink to = "/Cart"> <div id="basket">
                         <div>
                         <FaShoppingBasket className="icon"  />
                         </div>
                         <div>
                             My Basket
                         </div>
-                </div>
-                <div id="register">
+                </div></NavLink>
+              <NavLink to ='/Login'><div id="register">
                     {/* <img src="person.png" alt="" /> */}
                     <div>
                     <IoMdPerson />
                     </div>
                     <div id="btn">Login</div>
-                </div>
+                </div></NavLink>
             </nav>
             {/* <img id="arrow" src="newarrow.png" alt="" /> */}
             <div id="sec">
@@ -40,17 +41,17 @@ const Navbar = () => {
                     <span id="shop">SHOP BY CATEGORY
                         <div className="dropdown__menu">
                             <ul>
-                                <li type="none" className="list">Fruits & Vegitables
+                            <NavLink to="/Fruites&Vegetables">  <li type="none" className="list">Fruits & Vegitables
                                     <div className="dropdown__menu-1">
                                         <ul>
-                                            <li className="list" type="none">Fresh Vegetables</li>
+                                           <li className="list" type="none">Fresh Vegetables</li>
                                             <li className="list" type="none">Herbs & Seasoning</li>
                                             <li className="list" type="none">Fresh Fruit</li>
                                             <li className="list" type="none">Organic Fruits & Vegetables</li>
                                             <li className="list" type="none">Cuts & Sprouts</li>
                                         </ul>
                                     </div>
-                                </li>
+                                </li></NavLink>
                                 <li type="none" className="list"> Foodgrains, Oil & Masalas
                                     <div className="dropdown__menu-2">
                                         <ul>
