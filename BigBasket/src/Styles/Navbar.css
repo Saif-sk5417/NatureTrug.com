@@ -1,0 +1,398 @@
+#nav {
+    display: flex;
+    height: 75px;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+    top: 0;
+    background-color: white;
+}
+
+#logo {
+    /* border: 1px solid red; */
+    width: 10%;
+    margin-left: -20px;
+}
+
+#logo>img {
+    width: 80%;
+    margin-top: 15px;
+}
+
+#logo>img:hover {
+    cursor: pointer;
+}
+
+#search {
+    /* border: 1px solid red; */
+    display: flex;
+    /* margin-left: -120px; */
+    width: 40%;
+    /* height: 45px; */
+}
+
+#input {
+    width: 100%;
+    border: 1px solid gray;
+}
+
+#searchlogo {
+    width: 8%;
+    cursor: pointer;
+    border: 1px solid gray;
+    border-left: none;
+}
+
+#basket {
+    display: flex;
+    justify-content: space-around;
+    /* background-color: rgb(212, 204, 204); */
+    align-items: center;
+    width: 8%;
+}
+
+#basket:hover {
+    cursor: pointer;
+}
+
+#basket div:nth-child(1) {
+    font-size: 25px;
+    color: red;
+}
+
+#register {
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: space-evenly;
+    width: 8%;
+    font-size: 15px;
+}
+
+#register div:nth-child(1)>svg {
+    margin-top: 2px;
+    font-size: 25px;
+    color: green;
+}
+
+#btn {
+    margin-top: 5px;
+    transition: .2s ease;
+}
+
+#btn:hover {
+    color: #75C532;
+    cursor: pointer;
+}
+
+#sec {
+    display: flex;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding: 10px;
+    align-items: center;
+    margin-top: 6rem;
+}
+
+#offer {
+    /* border: 1px solid red; */
+    width: 8%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 8px;
+    transition: .2s ease;
+}
+
+#offer:hover {
+    background-color: #75C532;
+    cursor: pointer;
+    border: 1px solid gray;
+    background-color: #75C532;
+}
+
+#category {
+    border: 1px solid gray;
+    width: 15%;
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #84c225;
+
+}
+
+#shop {
+    font-weight: bold;
+    color: white;
+    transition: .2s ease;
+}
+
+#arrow {
+    width: 6%;
+    height: 10px;
+    margin-top: 5px;
+}
+
+#category:hover {
+    cursor: pointer;
+    background-color: #75C532;
+}
+
+#category {
+    position: relative;
+}
+
+/* drop down */
+.dropdown__menu {
+    display: none;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+#category:hover .dropdown__menu {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: rgb(254, 254, 254);
+    font-weight: normal;
+}
+
+.dropdown__menu ul {
+    display: block;
+    margin: 10px;
+
+}
+
+.dropdown__menu ul li {
+    width: 210px;
+    padding: 5px;
+    text-align: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.list {
+    float: right;
+    margin-left: 20px;
+    padding: 1px;
+    color: black;
+}
+
+.dropdown__menu-1 {
+    display: none;
+    margin-left: 40px;
+    box-shadow: rgba(99, 80, 99, 0.1) 0px 2px 8px 0px;
+}
+
+.dropdown__menu-1 ul li {
+    width: 210px;
+    text-align: left;
+}
+
+.dropdown__menu ul li:hover .dropdown__menu-1 {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 200px;
+    background-color: rgb(255, 255, 255);
+    font-weight: normal;
+}
+
+.list:hover {
+    background-color: rgb(228, 228, 228);
+}
+
+.dropdown__menu-2 {
+    display: none;
+    margin-left: 20px;
+}
+
+.dropdown__menu-2 ul li {
+    width: 220px;
+    text-align: left;
+}
+
+.dropdown__menu ul li:hover .dropdown__menu-2 {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 200px;
+    background-color: rgb(255, 255, 255);
+    font-weight: normal;
+}
+
+.dropdown__menu-3 {
+    display: none;
+}
+
+.dropdown__menu-3 ul li {
+    width: 150px;
+    text-align: left;
+}
+
+.dropdown__menu ul li:hover .dropdown__menu-3 {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 200px;
+    background-color: rgb(255, 255, 255);
+    font-weight: normal;
+}
+
+
+@media screen and (max-width:1024px) {
+    #nav {
+        height: 50px;
+        /* border: 1px solid red; */
+    }
+
+    #logo {
+        margin-top: -10px;
+    }
+
+    #logo>img {
+        width: 60%;
+    }
+
+    #search {
+        display: flex;
+        margin-left: -100px;
+        width: 40%;
+    }
+
+    #search>input {
+        width: 60%;
+        margin-left: 100px;
+    }
+
+
+
+    #searchlogo {
+        width: 5%;
+        cursor: pointer;
+        border: 1px solid gray;
+        border-left: none;
+    }
+
+    #basket {
+        /* border: 1px solid red; */
+        width: 13%;
+        padding: 5px;
+        margin-left: -60px;
+    }
+
+    #baskimg {
+        width: 20%;
+    }
+
+    #register {
+        /* border: 1px solid red; */
+        width: 10%;
+        font-size: 12px;
+    }
+
+    #btn {
+        margin-top: 5px;
+        transition: .2s ease;
+    }
+
+    #category {
+        width: 15%;
+        padding: 8px;
+        font-size: 10px;
+    }
+
+    #offer {
+        font-size: 12px;
+    }
+
+    #sec {
+        height: 50px;
+        margin-top: 3rem;
+    }
+}
+
+@media screen and (max-width:600px) {
+
+    /* #logo{
+        border: 1px solid red;
+    } */
+    #logo>img {
+        width: 100%;
+    }
+
+    #sec {
+        margin-top: 3rem;
+    }
+
+    #search {
+
+        display: flex;
+        margin-left: -400px;
+    }
+
+    #input {
+        width: 30%;
+        border: 1px solid gray;
+    }
+
+    #searchlogo {
+        width: 10%;
+        cursor: pointer;
+        border: 1px solid gray;
+        border-left: none;
+
+    }
+
+    #category {
+        width: 90px;
+        font-size: 7px;
+
+    }
+
+    #offer>span {
+        font-size: 8px;
+       margin-top: 5px;
+       margin-left: 2px;
+    }
+
+    #basket {
+        margin-left: 200px;
+    }
+
+    #basket div:nth-child(2) {
+        content: "";
+        font-size: 0px;
+    }
+
+    #basket div:nth-child(1) {
+        font-size: 20px;
+        margin-left: 80px;
+        color: black;
+    }
+
+    .icon {
+        color: black;
+    }
+
+    #search>input {
+        width: 0px;
+        border: none;
+    }
+
+    #searchlogo {
+        border-top: none;
+        border-bottom: none;
+        border-right: none;
+        margin-left: 300px;
+    }
+
+    #register div:nth-child(1)>svg {
+        font-size: 20px;
+        color: black;
+    }
+
+    #register div:nth-child(2) {
+        content: "";
+        font-size: 0px;
+    }
+}
