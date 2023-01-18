@@ -1,0 +1,37 @@
+/* .Full_footer{
+
+} */
+.Footer_row {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 20%);
+    justify-content: space-between;
+}
+
+.Footer_row p {
+    font-size: 14px;
+}
+
+.Each_row {
+    text-align: left;
+    font-size: 13px;
+}
+
+.Footer_head {
+    color: #6cd138;
+    font-size: 14px;
+    font-weight: light;
+}
+.Social_logo_div{
+    display: flex;
+    /* border: 1px solid; */
+}
+.Social_logo_div img{
+    width: 40px;
+    margin-right: 10px;
+    background-color: white;
+}
+/* .Footer_detail{
+
+} */
