@@ -1,0 +1,114 @@
+/* .payment_container {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.User_details {
+    border: 1px solid red;
+    width: 50%;
+}
+.input_form{
+    border: 1px solid blue;
+    width: 45%;
+}
+.payment_inputs{
+    border: 1px solid gray;
+}
+
+.Payment_div {
+    border: 1px solid red;
+    width: 50%;
+} */
+* {
+  font-family: sans-serif;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-transform: capitalize;
+  transition: all 0.04s linear;
+  background-color: #f8f8f8;
+}
+#navbar {
+  height: 80px;
+ 
+  background-color: #75C532;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} 
+ #navbar > h2 {
+  color: white;
+  background-color: #75C532;
+}
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  min-height: 100vh;
+  padding-bottom: 70px;
+}
+#container form {
+  padding: 20px;
+  width: 700px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.col {
+  flex: 1 1 250px;
+}
+.title {
+  font-size: 20px;
+  color: #333;
+  padding-bottom: 5px;
+  text-transform: uppercase;
+}
+.inputBox {
+  margin: 15px 0px;
+}
+.inputBox span {
+  margin-bottom: 10px;
+  display: block;
+}
+.inputBox input,
+select {
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 10px 15px;
+  font-size: 15px;
+  text-transform: none;
+}
+.flex {
+  display: flex;
+  gap: 15px;
+}
+.flex .inputBox {
+  margin-top: 0px;
+}
+img {
+  height: 30px;
+  margin: 3px;
+}
+#submit {
+  width: 50%;
+  padding: 12px;
+  font-size: 18px;
+  background-color: #75C532;
+  border-radius: 5px;
+  color: white;
+  margin-top: 25px;
+  cursor: pointer;
+  margin: auto;
+}
+#submit:hover {
+  color: #75C532;
+  background-color: white;
+  border: 1px solid #75C532;
+}
