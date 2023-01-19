@@ -11,10 +11,14 @@ import {
     Link,
     Stack,
     Image,
+    Container,
+    Box,
+    Hide
   } from '@chakra-ui/react';
 import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import {useDispatch} from "react-redux";
+import lo from "../../src/prologo.png"
   
   export default function Login() {
 
@@ -42,20 +46,37 @@ import {useDispatch} from "react-redux";
     }
 
     return (
-      <Stack minH={'100vh'} direction={{ base: 'column', md: 'row' }}>
-        <Flex p={8} flex={1} align={'center'} justify={'center'}>
-          <Stack spacing={4} w={'full'} maxW={'md'}>
-            <Heading fontSize={'2xl'}>Login to Nature Trug</Heading>
+      <Box bgColor={'#A8C082'} maxH={'sm'}>
+        
+      
+      {/* <Container maxW='6xl'  centerContent border={"2px solid red"} borderRadius="8px" padding={"10px 50px "}> */}
+      <Stack m="auto" maxW='6xl'maxH={'700px'} direction={{ base: 'column', md: 'row' }} border={"2px solid #84C225"}  backgroundColor={"white"}   >
+      <Hide below='md'><Flex flex={1}>
+      
+          <Image
+            alt={'Login Image'}
+            boxSize='690px'
+            // border="2px solid red"
+            objectFit={'cover'}
+            src={
+              './Images/Login/Side-image.jpg'
+            }
+          />
+        </Flex></Hide>
+        <Flex p={0} flex={1} align={'center'} justify={'center'}>
+          <Stack spacing={4} w={'full'} maxW={'md'} padding="30px" >
+          {/* <Image  boxSize='200px' objectFit='over' src={lo} alt='nature trug' margin="auto" /> */}
+            <Heading fontSize={'3xl'} color={"#84C225"} >Login</Heading>
             <FormControl id="email">
-              <FormLabel>Email address</FormLabel>
+              <FormLabel color={"#84C225"} >Email address</FormLabel>
               <Input type="email" 
-              value={email} onChange={(e)=>setEmail(e.target.value)}
+              value={email} onChange={(e)=>setEmail(e.target.value)} _focusVisible={{ border : "2px solid #84C225"}}
               />
             </FormControl>
             <FormControl id="password">
-              <FormLabel>Password</FormLabel>
+              <FormLabel color={"#84C225"} >Password</FormLabel>
               <Input type="password"
-              value={password} onChange={(e)=>setPassword(e.target.value)}
+              value={password} onChange={(e)=>setPassword(e.target.value)} _focusVisible={{ border : "2px solid #84C225"}}
               />
             </FormControl>
             <Stack spacing={6}>
@@ -63,25 +84,28 @@ import {useDispatch} from "react-redux";
                 direction={{ base: 'column', sm: 'row' }}
                 align={'start'}
                 justify={'space-between'}>
-                <Checkbox>Remember me</Checkbox>
-                <Link color={'blue.500'}>Forgot password?</Link>
+                <Checkbox colorScheme='green' defaultChecked >Remember me</Checkbox>
+                <Link color={'#84C225'} >Forgot password?</Link>
               </Stack>
-              <Button colorScheme={'blue'} variant={'solid'}
+              <Button bgColor={"#84C225"} _hover={{ background: "#4cbb17"  }} variant={'solid'}
               onClick={handlelogin}>
                 Login
               </Button>
             </Stack>
           </Stack>
         </Flex>
-        <Flex flex={1}>
+        {/* <Flex flex={1}>
           <Image
             alt={'Login Image'}
+            boxSize='662px'
             objectFit={'cover'}
             src={
-              'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80'
+              './Images/Login/Side-image.jpg'
             }
           />
-        </Flex>
+        </Flex> */}
       </Stack>
+      {/* </Container> */}
+    </Box>
     );
   }
