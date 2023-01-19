@@ -19,7 +19,7 @@ const MainRoutes = () =>
              <Route path = '/Cart' element={<CartPages />}/>
              <Route path = '/Fruites&Vegetables' element={<FruitesandVeggies />}/>
              <Route path = '/FoodGrains' element={<FoodGrains />}/>
-             <Route path = '/FoodGrains/:id' element={<SingleProductPage />}/>
+             <Route path = '/FoodGrains/:id' element={<SingleProductPage />}/>  
              <Route path = '/Fruites&Vegetables/:id' element={<SingleProductPage />}/>
          </Routes>
     )
