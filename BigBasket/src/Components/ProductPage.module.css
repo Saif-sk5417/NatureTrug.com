@@ -1,0 +1,122 @@
+.ProductPage_main{
+    width : 90%;
+    margin: auto;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+.ProductPage_TopImage img{
+    margin: auto;
+    margin-top: 50px;
+}
+.FilterProduct_Main{
+    border-right: 0.5px solid rgba(206, 198, 198, 0.813);
+    position: sticky;
+}
+.FilterProduct_heading{
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 20px;
+    color: #343333;
+    text-align: left;
+    margin-left: 10px;
+}
+.FilterProduct_underLine{
+    border: 2px solid rgb(87, 191, 52);
+    width: 30%;
+    margin-left: 10px;
+}
+.FilterProduct_underLineBrand{
+    border: 2px solid rgb(87, 191, 52);
+    width: 22%;
+    margin-left: 10px;
+}
+.FilterProduct_underLineRelevance{
+    border: 2px solid rgb(87, 191, 52);
+    width: 33%;
+    margin-left: 10px;  
+}
+.FilterProduct_hr1{
+    margin-top: -1px;
+    width: 95%;
+}
+.FilterProduct_Category{
+    /* border: 1px solid black; */
+    margin-top: 10px;
+    text-align:left;
+    font-size: 15px;
+    margin-left: 10px;
+}
+.FilterProduct_Category p{
+  margin-left: 10px;
+  padding: 5px 0px;
+}
+.FilterProduct_Category p:hover ,.FilterProduct_Brands div:hover{
+    color :rgb(87, 191, 52);
+    cursor: pointer;
+  }
+.FilterProduct_Category :nth-child(1){
+    color :rgb(87, 191, 52);
+    margin-left: 0px;
+  }
+.FilterProduct_Brands{
+    /* border: 1px solid black; */
+    margin-top: 10px;
+    text-align:left;
+    font-size: 15px;
+    margin-left: 10px;
+}
+.FilterProduct_Brands div{
+    margin-left: 10px;
+    padding: 3px 0px;
+}
+.FilterProduct_Brands input{
+    font-size: 16px;
+}
+.FilterProduct_Brands label{
+    margin-left: 5px;
+}
+.FilterProduct_Sort_Main{
+    /* border: 1px solid black; */
+    margin-left: 10px;
+    text-align: left;
+    font-size: 16px;
+}
+.sortby_heading{
+    color :rgb(87, 191, 52);
+    margin-top: 10px;
+}
+.ProductList_Main{
+    height: 500px;
+}
+.ProductList_Truckicon{
+    font-size: 25px;
+    color: rgb(87, 191, 52);
+}
+.ProductList_Truck{
+    display: flex;
+    border-bottom: 2px solid rgb(87, 191, 52);
+    justify-content: space-between;
+    margin-top: 40px;
+    margin-left: 20px;
+    width: 13%;
+}
+.ProductList_Heading{
+    font-size: 23px;
+    font-weight: 400;
+    margin-top: 20px;
+    color: #343333;
+    text-align: left;
+    margin-left: 10px;
+}
+.ProductList_Hr1{
+    margin-top: 1px;
+    margin-left: 20px;
+}
+.ProductList_SingleCard{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    margin-left: 20px;
+    margin-top: 10px;
+}
