@@ -40,7 +40,7 @@ export default class SimpleSlider extends Component {
       // prevArrow: <SamplePrevArrow />
  };
     return (
-      <Box h={'auto'} w='100%' m={'auto'} mt='25px' mb="15px" >
+      <Box h={'auto'} w='100%' m={'auto'} mt='140px' mb="15px" >
         
         <Slider {...settings}>
         <Box>
