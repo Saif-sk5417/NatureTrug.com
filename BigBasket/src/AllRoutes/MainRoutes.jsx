@@ -1,4 +1,8 @@
 import { Route, Routes } from "react-router-dom"
+import { AddProduct } from "../Components/Admin/AddProduct"
+import { Dashboard } from "../Components/Admin/Dashboard"
+import { EditProduct } from "../Components/Admin/EditProduct"
+import { Order } from "../Components/Admin/Order"
 import Payment from "../Components/Payment"
 import AdminPage from "../Pages/AdminPage"
 import CartPages from "../Pages/CartPages"
@@ -23,6 +27,10 @@ const MainRoutes = () =>
              <Route path = '/FoodGrains' element={<FoodGrains />}/>
              <Route path = '/FoodGrains/:id' element={<SingleProductPage />}/>  
              <Route path = '/Fruites&Vegetables/:id' element={<SingleProductPage />}/>
+             <Route path = '/Dashboard' element = {<Dashboard />}/>
+             <Route path = '/Order' element = {<Order/>}/>
+             <Route path = '/AddProduct' element = {<AddProduct />}/>
+             <Route path = '/EditProduct' element = {<EditProduct />}/>
          </Routes>
     )
 }
