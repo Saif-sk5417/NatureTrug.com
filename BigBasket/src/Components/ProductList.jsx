@@ -4,19 +4,27 @@ import { getProductsData } from "../Redux/AppReducer/action"
 import styles from './ProductPage.module.css'
 import { RiTruckFill } from 'react-icons/ri'
 import SingleCard from "./SingleCard/SingleCard"
+import { useLocation, useSearchParams } from "react-router-dom"
 
 const ProductList = () =>{
     const Products = useSelector((store) => store.AppReducer.Products)
     const dispatch = useDispatch()
+    const location = useLocation()
+    const [searchParams] = useSearchParams()
     useEffect(()=>{
-        if(Products.length === 0)
-        {
-            dispatch(getProductsData())
+        if(location || Products.length === 0)
+        {   
+            const getProductParams = {
+                params : {
+                    category : searchParams.getAll("category"),
+                }
+            }
+            dispatch(getProductsData(getProductParams))
         }
-    },[Products.length , dispatch])
+    },[Products.length , dispatch ,location.search])
     return (
         <div className={styles.ProductList_Main}>
-            <p className={styles.ProductList_Heading}>Fruits & Vegetables (110)</p>
+            <p className={styles.ProductList_Heading}>Fruits & Vegetables ({Products.length})</p>
             <div className={styles.ProductList_Truck}>
                   <RiTruckFill className={styles.ProductList_Truckicon}/>
                   <p>All Products</p>
