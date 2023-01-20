@@ -26,7 +26,7 @@
 }
 
 #search {
-    /* border: 1px solid red; */
+    border: 1px solid grey;
     display: flex;
     /* margin-left: -120px; */
     width: 50%;
@@ -35,13 +35,14 @@
 
 #input {
     width: 100%;
-    border: 1px solid gray;
+    border-right: 1px solid gray;
 }
 
 #searchlogo {
+    /* border: 1px solid red; */
     width: 6%;
     cursor: pointer;
-    border: 1px solid gray;
+    /* border-left: 1px solid gray; */
     border-left: none;
 }
 

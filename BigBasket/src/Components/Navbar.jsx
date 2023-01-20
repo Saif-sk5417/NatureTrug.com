@@ -8,6 +8,7 @@ import lo from "../../src/prologo.png"
 import "../Styles/Navbar.css"
 import { NavLink } from "react-router-dom"
 
+
 const Navbar = () => {
     return (
         <div>
@@ -19,18 +20,18 @@ const Navbar = () => {
                     <input id="input" type="text" placeholder="     Search for Product..." />
                     <img id="searchlogo" src="search.png" alt="" />
                 </div>
-                <NavLink to = "/Cart"> <div id="basket">
-                        <div>
-                        <FaShoppingBasket className="icon"  />
-                        </div>
-                        <div>
-                            My Basket
-                        </div>
+                <NavLink to="/Cart"> <div id="basket">
+                    <div>
+                        <FaShoppingBasket className="icon" />
+                    </div>
+                    <div>
+                        My Basket
+                    </div>
                 </div></NavLink>
-              <NavLink to ='/Login'><div id="register">
+                <NavLink to='/Login'><div id="register">
                     {/* <img src="person.png" alt="" /> */}
                     <div>
-                    <IoMdPerson />
+                        <IoMdPerson />
                     </div>
                     <div id="btn">Login</div>
                 </div></NavLink>
@@ -41,10 +42,10 @@ const Navbar = () => {
                     <span id="shop">SHOP BY CATEGORY
                         <div className="dropdown__menu">
                             <ul>
-                            <NavLink to="/Fruites&Vegetables">  <li type="none" className="list">Fruits & Vegitables
+                                <NavLink to="/Fruites&Vegetables">  <li type="none" className="list">Fruits & Vegitables
                                     <div className="dropdown__menu-1">
                                         <ul>
-                                           <li className="list" type="none">Fresh Vegetables</li>
+                                            <li className="list" type="none">Fresh Vegetables</li>
                                             <li className="list" type="none">Herbs & Seasoning</li>
                                             <li className="list" type="none">Fresh Fruit</li>
                                             <li className="list" type="none">Organic Fruits & Vegetables</li>
@@ -82,7 +83,7 @@ const Navbar = () => {
                                     </div>
                                 </li>
                                 <li type="none" className="list">Beverages
-                                <div className="dropdown__menu-4">
+                                    <div className="dropdown__menu-4">
                                         <ul>
                                             <li className="list" type="none">Water</li>
                                             <li className="list" type="none">Health Drinks</li>
@@ -93,7 +94,7 @@ const Navbar = () => {
                                     </div>
                                 </li>
                                 <li type="none" className="list">Branded Foods
-                                <div className="dropdown__menu-5">
+                                    <div className="dropdown__menu-5">
                                         <ul>
                                             <li className="list" type="none">Breakfast Cereals</li>
                                             <li className="list" type="none">Veggies & Snacks</li>
@@ -105,9 +106,9 @@ const Navbar = () => {
                                             <li className="list" type="none">Indian Mithai</li>
                                         </ul>
                                     </div>
-                                    </li>
+                                </li>
                                 <li type="none" className="list">Beauty & Hygiene
-                                <div className="dropdown__menu-6">
+                                    <div className="dropdown__menu-6">
                                         <ul>
                                             <li className="list" type="none">Ferminine Hygiene</li>
                                             <li className="list" type="none">Bath & Hand Wash</li>
