@@ -10,6 +10,8 @@ import {
   Button
 } from '@chakra-ui/react'
 import { VscPassFilled } from "react-icons/vsc"
+import { NavLink } from 'react-router-dom'
+// import { FaShoppingBasket } from "react-icons/fa"
 
 export  const ModalComponent = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
@@ -20,18 +22,18 @@ export  const ModalComponent = () => {
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Modal Title</ModalHeader>
+          <ModalHeader>Order Info</ModalHeader>
           <ModalCloseButton />
-          <ModalBody>
+          <ModalBody style={{display:"flex", alignItems:"center"}}>
             {/* <Lorem count={2} /> */}
-            Your Order Placed Successfully <VscPassFilled />
+            <p>Your Order Placed Successfully</p> <VscPassFilled color='green' fontSize={"20px"} />
           </ModalBody>
 
           <ModalFooter>
-            <Button colorScheme='blue' mr={3} onClick={onClose}>
+            <Button colorScheme='green' mr={3} onClick={onClose}>
               Close
             </Button>
-            <Button variant='ghost'>Secondary Action</Button>
+            <NavLink to={'/Fruites&Vegetables'}><Button variant='ghost'> Continue Shopping</Button></NavLink> 
           </ModalFooter>
         </ModalContent>
       </Modal>
