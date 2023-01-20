@@ -11,7 +11,6 @@ const FruitesandVeggies = () =>
     return (
         <div>
             <Navbar/>
-            <SlideCard />
             <div className={styles.ProductPage_TopImage}>
                 <img src="https://www.bigbasket.com/media/uploads/flatpages/test-1/Fruits%20&%20vegetables.jpg" alt="FruitAndVegetables"/>
             </div>
