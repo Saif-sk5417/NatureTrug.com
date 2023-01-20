@@ -1,3 +1,4 @@
+import { StarIcon } from "@chakra-ui/icons";
 import {
     Card,
     CardBody,
@@ -76,8 +77,9 @@ import AddToCart from "./AddToCart";
               </span>
             </Text>
             <Spacer />
-            <Text color="gray" fontSize="12px" fontWeight="bold">
-               {rating}
+            <StarIcon color='rgb(132, 194, 37)' />
+            <Text color="gray" fontSize="12px" fontWeight="bold" ml='5px'>
+             {rating}/5
             </Text>
             </Flex>
             <Text fontSize="13px"  color="gray" mt="20px">

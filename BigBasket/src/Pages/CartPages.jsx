@@ -5,6 +5,7 @@ import CartQuantity from "../Components/Cart/CartQuantity";
 import TotalCheck from "../Components/Cart/TotalCheck";
 import {Navbar} from "../Components/Navbar";
 import {DeleteIcon} from "@chakra-ui/icons"
+import { Footer } from "../Components/Footer";
 const CartPages = () =>
 {
     return (
@@ -63,7 +64,9 @@ const CartPages = () =>
         </Grid>
        </Box>
        </Box>
+       <Footer />
        </Box>
+       
     )
 }
 

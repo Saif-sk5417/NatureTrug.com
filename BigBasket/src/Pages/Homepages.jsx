@@ -27,7 +27,6 @@ const HomePages = () =>
             <Fruites />
             <BrandStore />
             </Box>
-            
             <Footer />
         </div>
     )

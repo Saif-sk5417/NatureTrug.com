@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom"
+import Payment from "../Components/Payment"
 import AdminPage from "../Pages/AdminPage"
 import CartPages from "../Pages/CartPages"
 import FoodGrains from "../Pages/FoodGrains"
@@ -17,6 +18,7 @@ const MainRoutes = () =>
              <Route path = '/Login' element={<LoginPages />}/>
              <Route path = '/Admin' element={<AdminPage />}/>
              <Route path = '/Cart' element={<CartPages />}/>
+             <Route path = "/Payment" element={<Payment />}/>
              <Route path = '/Fruites&Vegetables' element={<FruitesandVeggies />}/>
              <Route path = '/FoodGrains' element={<FoodGrains />}/>
              <Route path = '/FoodGrains/:id' element={<SingleProductPage />}/>  

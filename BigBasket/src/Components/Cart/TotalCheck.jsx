@@ -1,5 +1,6 @@
 import React from 'react'
 import {Box, Flex, Heading, Spacer,Divider,Text, Button,Input} from "@chakra-ui/react"
+import { NavLink } from 'react-router-dom';
 const TotalCheck = () => {
   return (
     <Box boxShadow= "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px" pt='15px' pb='15px' pl='15px' pr='15px'>
@@ -57,7 +58,7 @@ const TotalCheck = () => {
 
       <Text color='gray'>or 4 interest-free payments of $ 10.00 with offerPay.</Text>
       <Box m='20px'>
-      <Button bgColor="rgb(132, 194, 37)" color="white" fontSize={'18px'} fontWeight='bold'>Checkouts</Button>
+      <NavLink to ='/Payment'><Button bgColor="rgb(132, 194, 37)" color="white" fontSize={'18px'} fontWeight='bold'>Checkouts</Button></NavLink>
       </Box>
     </Box>
   )
