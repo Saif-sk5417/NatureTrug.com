@@ -1,7 +1,8 @@
 const EditProduct = () => {
     return (
         <div>
-            EditProduct
+            <input >edit </input>
+            <button>save</button>
         </div>
     )
 }
