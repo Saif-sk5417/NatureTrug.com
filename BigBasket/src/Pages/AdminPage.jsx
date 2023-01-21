@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom"
 import { AddProduct } from "../Components/Admin/AddProduct"
 import { Dashboard } from "../Components/Admin/Dashboard"
 import { EditProduct } from "../Components/Admin/EditProduct"
-import { Order } from "../Components/Admin/Order"
+import  {Order}  from "../Components/Admin/Order"
 
 
 const AdminPage = () =>
