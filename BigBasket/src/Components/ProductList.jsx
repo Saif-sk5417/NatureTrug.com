@@ -34,6 +34,7 @@ const ProductList = () =>{
                 {Products.map((el) =>{
                     return(
                         <SingleCard
+                         id = {el.id}
                          key = {el.id}  
                          name = {el.name}
                          image = {el.Image}
@@ -41,6 +42,7 @@ const ProductList = () =>{
                          Category = {el.category}
                          Weights = {el.Weight}
                          rating = {el.rating}
+                         CartQuantity ={el.CartQuantity}
                         />
                     )
                 })}

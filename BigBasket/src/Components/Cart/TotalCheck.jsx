@@ -1,7 +1,16 @@
 import React from 'react'
 import {Box, Flex, Heading, Spacer,Divider,Text, Button,Input} from "@chakra-ui/react"
-import { NavLink } from 'react-router-dom';
-const TotalCheck = () => {
+import { Navigate, NavLink, useNavigate } from 'react-router-dom';
+const TotalCheck = ({CartDatalength,Total}) => {
+  const navigate = useNavigate()
+  const handelNavigate=()=>{
+    if(CartDatalength > 0){
+      navigate("/Payment")
+    }
+    else {
+      alert('Cart is Empty')
+    }
+  }
   return (
     <Box boxShadow= "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px" pt='15px' pb='15px' pl='15px' pr='15px'>
       <Box m='10px'>
@@ -29,7 +38,7 @@ const TotalCheck = () => {
         Item
         </Heading>
         <Spacer />
-        <Heading size={'sm'}>0</Heading>
+        <Heading size={'sm'}>{CartDatalength}</Heading>
       </Flex>
 
       <Flex m="10px">
@@ -37,7 +46,7 @@ const TotalCheck = () => {
         Price
         </Heading>
         <Spacer />
-        <Heading size={'sm'}>$ 0</Heading>
+        <Heading size={'sm'}>₹ {Total}</Heading>
       </Flex>
 
       <Flex m="10px">
@@ -45,7 +54,7 @@ const TotalCheck = () => {
         Discounts
         </Heading>
         <Spacer />
-        <Heading size={'sm'}>$ 0</Heading>
+        <Heading size={'sm'}>0 %</Heading>
       </Flex>
       <Divider />
       <Flex m="10px">
@@ -53,12 +62,18 @@ const TotalCheck = () => {
         Estimated Total
         </Heading>
         <Spacer />
-        <Heading size={'sm'}>$ 128.99</Heading>
+        <Heading size={'sm'}>₹ {Total}</Heading>
       </Flex>
 
-      <Text color='gray'>or 4 interest-free payments of $ 10.00 with offerPay.</Text>
+      <Text color='gray'>or 4 interest-free payments of ₹ 10.00 with offerPay.</Text>
       <Box m='20px'>
-      <NavLink to ='/Payment'><Button bgColor="rgb(132, 194, 37)" color="white" fontSize={'18px'} fontWeight='bold'>Checkouts</Button></NavLink>
+     <Button
+      bgColor="rgb(132, 194, 37)" 
+      color="white"
+       fontSize={'18px'} 
+       fontWeight='bold'
+       onClick={handelNavigate}
+       >Checkouts</Button>
       </Box>
     </Box>
   )
