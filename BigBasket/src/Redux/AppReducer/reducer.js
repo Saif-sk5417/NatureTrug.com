@@ -1,4 +1,4 @@
-import { GET_PRODUCTS_FAILURE, GET_PRODUCTS_REQUEST, GET_PRODUCTS_SUCCESS } from "./actionTypes"
+import { ADD_QUANTITY, ADD_TO_CART, GET_PRODUCTS_FAILURE, GET_PRODUCTS_REQUEST, GET_PRODUCTS_SUCCESS, REMOVE_FROM_CART } from "./actionTypes"
 
 
 const initialState = {
@@ -29,6 +29,24 @@ const reducer = (state = initialState,action) =>
                 ...state ,
                 isLoading : false ,
                 Products : [] ,
+                isError : false 
+            }
+        case ADD_TO_CART :
+            return {
+                ...state ,
+                isLoading : false ,
+                isError : false
+            }
+        case ADD_QUANTITY :
+            return {
+                ...state ,
+                isLoading : false ,
+                isError : false 
+            }
+        case REMOVE_FROM_CART :
+            return {
+                ...state ,
+                isLoading : false ,
                 isError : false 
             }
         default :

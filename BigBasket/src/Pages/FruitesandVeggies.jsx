@@ -6,9 +6,11 @@ import { FilterProduct } from "../Components/FilterProducts"
 import styles from '../Components/ProductPage.module.css'
 import Fruites from "../Components/Home/Fruites"
 import SimpleSlider from "../Components/Home/SlideCard"
+import { Footer } from "../Components/Footer"
 const FruitesandVeggies = () =>
 {
     return (
+        <>
         <div>
             <Navbar/>
             <div className={styles.ProductPage_TopImage}>
@@ -19,6 +21,10 @@ const FruitesandVeggies = () =>
             <ProductList />
             </div>
         </div>
+        <div>
+            <Footer />
+        </div>
+        </>
     )
 }
 

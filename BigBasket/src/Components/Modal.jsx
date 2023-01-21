@@ -18,7 +18,6 @@ export  const ModalComponent = () => {
   return (
     <>
       <Button onClick={onOpen} bg={'#75c532'}>Place Order</Button>
-
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
@@ -30,9 +29,9 @@ export  const ModalComponent = () => {
           </ModalBody>
 
           <ModalFooter>
-            <Button colorScheme='green' mr={3} onClick={onClose}>
+          <NavLink to={'/'}><Button colorScheme='green' mr={3} onClick={onClose}>
               Close
-            </Button>
+            </Button></NavLink> 
             <NavLink to={'/Fruites&Vegetables'}><Button variant='ghost'> Continue Shopping</Button></NavLink> 
           </ModalFooter>
         </ModalContent>

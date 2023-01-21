@@ -10,11 +10,21 @@ import {
     Select,
     Flex,
     Spacer,
-    Box
+    Box,
+    PopoverTrigger,
+    PopoverContent,
+    PopoverArrow,
+    PopoverCloseButton,
+    PopoverBody,
+    PopoverHeader,
+    Popover
   } from "@chakra-ui/react";
+import { useDispatch } from "react-redux";
+import { NavLink } from "react-router-dom";
 import AddToCart from "./AddToCart";
+import Counter from "./Counter";
   import styles from './SingleCard.module.css'
-  const SingleCard = ({name,image,Category,Price,Weights,rating}) => {
+  const SingleCard = ({name,image,Category,Price,Weights,rating,id,CartQuantity}) => {
     return (
       <Card w="320px" h="auto" m="auto" className={styles.card} pt="0px" mt="20px"
       boxShadow = "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;"
@@ -88,15 +98,30 @@ import AddToCart from "./AddToCart";
             </Text>
           </Stack>
           <Flex mt="20px">
-            <Button bgColor="rgb(132, 194, 37)">
+          {CartQuantity == 0 ? 
+          <Popover>
+          <PopoverTrigger>
+          <Button bgColor="rgb(132, 194, 37)">
               <Text fontSize="12px" color="white" fontWeight="bold">
                 BUY NOW
               </Text>
             </Button>
+            </PopoverTrigger>
+            <PopoverContent>
+              <PopoverArrow />
+              <PopoverCloseButton />
+              <PopoverHeader fontWeight='bold' bg='lightGreen'>Add it to cart First!</PopoverHeader>
+            </PopoverContent>
+          </Popover> 
+          : 
+           <NavLink to = '/Cart'><Button bgColor="rgb(132, 194, 37)">
+           <Text fontSize="12px" color="white" fontWeight="bold">
+             BUY NOW
+           </Text>
+           </Button></NavLink>
+       }
             <Spacer />
-            {/* <Counter /> */}
-            <AddToCart />
-            {/* {count == 0 ? <Addbtn handleClick={handleClick} /> : <Counter  />} */}
+             {CartQuantity == 0 ? <AddToCart id = {id} /> : <Counter id = {id} CartQuantity ={CartQuantity}/>}
           </Flex>
         </CardBody>
       </Card>

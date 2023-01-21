@@ -1,13 +1,36 @@
 
-import {Box, Heading,Flex, Spacer,Grid, GridItem,Image,Icon} from "@chakra-ui/react";
+import {Box, Heading,Flex, Spacer,Grid, GridItem,Image,Icon, Alert, AlertIcon, AlertTitle, AlertDescription} from "@chakra-ui/react";
 import { FaShoppingBasket} from "react-icons/fa"
 import CartQuantity from "../Components/Cart/CartQuantity";
 import TotalCheck from "../Components/Cart/TotalCheck";
 import {Navbar} from "../Components/Navbar";
 import {DeleteIcon} from "@chakra-ui/icons"
 import { Footer } from "../Components/Footer";
+import Cart from "../Components/Cart";
+import { useDispatch, useSelector } from "react-redux";
+import { getProductsData, RemoveFromCart } from "../Redux/AppReducer/action";
+import { useEffect } from "react";
+import { useToast } from "react-toastify";
 const CartPages = () =>
 {
+   const Products = useSelector((store) => store.AppReducer.Products)
+   const cartData = Products.filter((el) => el.CartQuantity > 0)
+   const Total = cartData.reduce((sum,el) => sum += el.Price * el.CartQuantity,0 )
+   const dispatch = useDispatch()
+   const handelDelete = (id) =>{
+    if(id){
+     dispatch(RemoveFromCart(id))
+     .then(()=>{
+        dispatch(getProductsData())
+     })
+    }
+}
+   useEffect(()=>{
+    if(Products.length == 0){
+      dispatch(getProductsData())
+    }
+  
+   },[Products.length ,dispatch])
     return (
         <Box>
         <Navbar/>
@@ -23,43 +46,24 @@ const CartPages = () =>
        <Box w="100%" h='auto' m="auto" mt="30px">
         <Grid templateColumns={['repeat(2,1fr)','repeat(2,1fr)','repeat(3, 1fr)']} gap="3" >
            <GridItem colSpan={2}  mb="10px">
-             <Box m='auto' textAlign={'left'} boxShadow= "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px" pt='5px' pb='5px' pl='15px' pr='15px'>
-                <Flex>
-                <Box m={'auto'} p='5px'>
-                <Image src="https://www.bigbasket.com/media/uploads/p/s/10000074_19-fresho-cauliflower.jpg" h={['90','','120']} w='auto'/>
-                </Box>
-                <Spacer />
-                <Box w={'auto'}
-                    m='auto'>
-                <Heading size={['xs','sm','md']} p={[0.5,0.5,1]} >Cauliflower</Heading>
-                <Heading size={['xs','sm','sm']} p={1}  color={'gray'}>250ml</Heading>
-                <Image
-                src="https://www.bbassets.com/static/v2627/custPage/build/content/img/vegicon.svg"
-                h="6"
-                w="6"
-                
-              />
-                </Box>
-                <Spacer />
-                <Box w={'auto'}
-                    m='auto'>
-                    <CartQuantity/>
-                </Box>
-                <Spacer />
-                <Box w={'auto'}
-                    m='auto'>
-                <Heading size={['xs',"",'md']}>₹ 2.99</Heading>
-                </Box>
-                <Spacer/>
-                <Box w={'auto'}
-                    m='auto'> <Icon as={DeleteIcon} boxSize={[5,6,7]} color="red" /></Box>
-                </Flex>
-             </Box>
-            
+            {cartData.length > 0 && cartData.map((el) => {
+                return (
+                    <Cart 
+                    key = {el.id}
+                    id = {el.id} 
+                    Weight = {el.Weight}
+                    image = {el.Image}
+                    name = {el.name}
+                    CartQuantity = {el.CartQuantity}
+                    price = {el.Price}
+                    handelCartDelete = {handelDelete}
+                    />
+                )
+            })}
            </GridItem>
            
            <GridItem colSpan={["2","2","1"]}>
-            <TotalCheck />
+            <TotalCheck CartDatalength={cartData.length} Total = {Total}/>
            </GridItem>
         </Grid>
        </Box>
