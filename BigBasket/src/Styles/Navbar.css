@@ -320,14 +320,16 @@
     }
 
     #search {
+        border: 0px;
         display: flex;
         margin-left: -100px;
         width: 40%;
     }
 
-    #search>input {
+    #input {
         width: 60%;
         margin-left: 100px;
+        border: 1px solid gray;
     }
 
 
@@ -391,7 +393,7 @@
     }
 
     #search {
-
+        border: 0px;
         display: flex;
         margin-left: -400px;
     }
