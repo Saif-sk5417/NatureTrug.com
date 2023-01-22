@@ -2,7 +2,7 @@ import axios from "axios"
 import { ADD_PRODUCTS_FAILURE, ADD_PRODUCTS_REQUEST, ADD_PRODUCTS_SUCCESS } from "./actionType"
 
 
-
+// ADD PRODUCT "POST"
 export const AddProducts = (newProduct) => (dispatch) =>{
     dispatch({type : ADD_PRODUCTS_REQUEST})
     return axios
@@ -15,3 +15,4 @@ export const AddProducts = (newProduct) => (dispatch) =>{
         dispatch({type : ADD_PRODUCTS_FAILURE })
     })
 }
+
