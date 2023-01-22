@@ -9,7 +9,7 @@ const Dashboard = () => {
             <Box h='auto' w='95%' m='auto' mt='180px'  >
                 <Grid templateColumns={'repeat(5,1fr)'} >
                     <GridItem colSpan={1} b p='10px'  >
-                    <Box
+                    <Link to='/Dash'> <Box
                      h="auto"
                      w="100%"
                      m="auto"
@@ -22,7 +22,7 @@ const Dashboard = () => {
                      bgColor="rgb(132, 194, 37)"
                      >
                      <Heading size="lg">Dashboard</Heading>
-                     </Box> 
+                     </Box> </Link>
                      <Box
                      h="auto"
                      w="100%"

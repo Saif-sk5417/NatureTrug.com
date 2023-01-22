@@ -3,12 +3,12 @@
     {
       "id": 1,
       "rating": 5,
-      "name": "Onion (Loose)",
+      "name": "onion",
       "Image": "https://www.bigbasket.com/media/uploads/p/s/10000150_19-fresho-onion.jpg",
       "category": "Organic",
       "Price": 156,
       "Weight": "5 kg - Rs 156.00",
-      "CartQuantity": 0
+      "CartQuantity": 4
     },
     {
       "id": 2,
@@ -1068,6 +1068,13 @@
       "category": "bb Combo",
       "Price": 166.5,
       "CartQuantity": 0
+    },
+    {
+      "name": "Onion",
+      "category": "Freesho",
+      "price": "123",
+      "image": "",
+      "id": 111
     }
   ]
 }
