@@ -10,7 +10,7 @@ const EditProduct = () => {
 
 
     console.log(pid, dvalue)
-    console.log
+    
     let Product = {
         "id": 1,
         "rating": 5,
