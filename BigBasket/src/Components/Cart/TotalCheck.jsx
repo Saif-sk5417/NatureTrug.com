@@ -8,7 +8,7 @@ const TotalCheck = ({CartDatalength,Total}) => {
       navigate("/Payment")
     }
     else {
-      alert('Cart is Empty')
+      alert('Sorry ! cart is Empty Add Some Products')
     }
   }
   return (

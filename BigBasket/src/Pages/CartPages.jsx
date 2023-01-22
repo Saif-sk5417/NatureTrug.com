@@ -11,6 +11,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getProductsData, RemoveFromCart } from "../Redux/AppReducer/action";
 import { useEffect } from "react";
 import { useToast } from "react-toastify";
+import { EmptyCart } from "../Components/Cart/EmptyCart";
 const CartPages = () =>
 {
    const Products = useSelector((store) => store.AppReducer.Products)
@@ -46,7 +47,8 @@ const CartPages = () =>
        <Box w="100%" h='auto' m="auto" mt="30px">
         <Grid templateColumns={['repeat(2,1fr)','repeat(2,1fr)','repeat(3, 1fr)']} gap="3" >
            <GridItem colSpan={2}  mb="10px">
-            {cartData.length > 0 && cartData.map((el) => {
+            {cartData.length == 0 ? <EmptyCart /> : 
+            cartData.length > 0 && cartData.map((el) => {
                 return (
                     <Cart 
                     key = {el.id}
@@ -59,7 +61,8 @@ const CartPages = () =>
                     handelCartDelete = {handelDelete}
                     />
                 )
-            })}
+            })
+            }
            </GridItem>
            
            <GridItem colSpan={["2","2","1"]}>

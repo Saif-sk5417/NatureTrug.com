@@ -14,6 +14,7 @@ import FruitesandVeggies from "../Pages/FruitesandVeggies"
 import HomePages from "../Pages/Homepages"
 import LoginPages from "../Pages/LoginPages"
 import SingleProductPage from "../Pages/SingleProductPage"
+import { PrivateRoutes } from "./PrivateRoutes"
 
 
 
@@ -24,7 +25,7 @@ const MainRoutes = () =>
              <Route path = '/' element={<HomePages />}/>
              <Route path = '/Login' element={<LoginPages />}/>
              <Route path = '/Admin' element={<AdminPage />}/>
-             <Route path = '/Cart' element={<CartPages />}/>
+             <Route path = '/Cart' element={<PrivateRoutes><CartPages /></PrivateRoutes>}/>
              <Route path = "/Payment" element={<Payment />}/>
              <Route path = '/Fruites&Vegetables' element={<FruitesandVeggies />}/>
              <Route path = '/FoodGrains' element={<FoodGrains />}/>

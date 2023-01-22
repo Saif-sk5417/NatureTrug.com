@@ -7,6 +7,7 @@ import styles from '../Components/ProductPage.module.css'
 import Fruites from "../Components/Home/Fruites"
 import SimpleSlider from "../Components/Home/SlideCard"
 import { Footer } from "../Components/Footer"
+import Gotottop from "../Components/GotoTop"
 const FruitesandVeggies = () =>
 {
     return (
@@ -19,10 +20,12 @@ const FruitesandVeggies = () =>
             <div  className={styles.ProductPage_main}>
             <FilterProduct />
             <ProductList />
+            
             </div>
         </div>
         <div>
             <Footer />
+            <Gotottop />
         </div>
         </>
     )

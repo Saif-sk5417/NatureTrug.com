@@ -1,3 +1,4 @@
+
 #nav {
     display: flex;
     height: 80px;
@@ -12,7 +13,7 @@
 
 #logo {
     /* border: 1px solid red; */
-    width: 10%;
+    width: 20%;
     margin-left: -20px;
 }
 
@@ -90,7 +91,7 @@
 
 #sec {
     display: flex;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;;
     padding: 10px;
     align-items: center;
     margin-top: 5rem;
@@ -114,11 +115,10 @@
 #offer:hover {
     background-color: #75C532;
     cursor: pointer;
-    border: 1px solid gray;
 }
 
 #category {
-    border: 1px solid gray;
+    border: 1px solid #84c225;
     width: 15%;
     padding: 8px;
     display: flex;
