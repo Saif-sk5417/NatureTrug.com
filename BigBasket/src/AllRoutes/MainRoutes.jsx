@@ -1,6 +1,8 @@
 import { Route, Routes } from "react-router-dom"
 import { AddProduct } from "../Components/Admin/AddProduct"
 import { Dashboard } from "../Components/Admin/Dashboard"
+import Dashboard1 from "../Components/Admin/Dashboard1"
+import DashboardData1 from "../Components/Admin/DashboardData1"
 
 
 
@@ -14,7 +16,6 @@ import FruitesandVeggies from "../Pages/FruitesandVeggies"
 import HomePages from "../Pages/Homepages"
 import LoginPages from "../Pages/LoginPages"
 import SingleProductPage from "../Pages/SingleProductPage"
-import { PrivateRoutes } from "./PrivateRoutes"
 
 
 
@@ -25,14 +26,14 @@ const MainRoutes = () =>
              <Route path = '/' element={<HomePages />}/>
              <Route path = '/Login' element={<LoginPages />}/>
              <Route path = '/Admin' element={<AdminPage />}/>
-             <Route path = '/Cart' element={<PrivateRoutes><CartPages /></PrivateRoutes>}/>
+             <Route path = '/Cart' element={<CartPages />}/>
              <Route path = "/Payment" element={<Payment />}/>
              <Route path = '/Fruites&Vegetables' element={<FruitesandVeggies />}/>
              <Route path = '/FoodGrains' element={<FoodGrains />}/>
              <Route path = '/FoodGrains/:id' element={<SingleProductPage />}/>  
              <Route path = '/Fruites&Vegetables/:id' element={<SingleProductPage />}/>
              <Route path = '/Dashboard' element = {<Dashboard />}/>
-            {/* <Route path="/Dashboard1" element={<DashBoard1 />} /> */}
+             <Route path="/Dash" element={<Dashboard1/>}/>
              <Route path = '/Order' element = {<Order/>}/>
              <Route path = '/AddProduct' element = {<AddProduct />}/>
              <Route path = '/EditProduct' element = {<EditProduct />}/>
