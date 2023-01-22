@@ -1,9 +1,11 @@
+import React from 'react'
+
+import { Box, Grid, GridItem, Heading, Spacer } from '@chakra-ui/react';
 import {Navbar} from "../Navbar";
-import { Box, Grid, GridItem ,Heading} from "@chakra-ui/react";
-import { Order } from "./Order";
-const Dashboard = () => {
-    return (
-        <Box boxShadow='rgba(99, 99, 99, 0.2) 0px 2px 8px 0px'>
+import DashboardData1 from './DashboardData1';
+const DashBoard1 = () => {
+  return (
+    <Box boxShadow='rgba(99, 99, 99, 0.2) 0px 2px 8px 0px'>
             <Navbar />
             <Box h='auto' w='95%' m='auto' mt='180px'  >
                 <Grid templateColumns={'repeat(5,1fr)'} >
@@ -80,12 +82,12 @@ const Dashboard = () => {
                      </Box> 
                     </GridItem>
                     <GridItem colSpan={4} >
-                       <Order/>
+                       <DashboardData1 />
                     </GridItem>
                 </Grid>
             </Box>
         </Box>
-    )
+  )
 }
 
-export { Dashboard }
+export default DashBoard1;

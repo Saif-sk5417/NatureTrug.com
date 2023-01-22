@@ -28,7 +28,7 @@ import {
           borderRadius="11px"
           color="white"
           fontWeight="bold"
-          bgColor="blue"
+          bgColor="rgb(132, 194, 37)"
         >
           <Heading size="lg"> Orders</Heading>
         </Box>
@@ -43,7 +43,7 @@ import {
           textAlign="left"
           bgColor="pink"
         >
-          <Box w="10%">
+          <Box w="13%">
             <Flex>
               <Icon as={WarningIcon} color="orange" p="auto" boxSize={5} />
               <Spacer />
@@ -112,7 +112,7 @@ import {
           textAlign="left"
           bgColor="blue.200"
         >
-          <Box w="10%">
+          <Box w="13%">
             <Flex>
               <Icon as={CheckCircleIcon} color="green" p="auto" boxSize={5} />
               <Spacer />
