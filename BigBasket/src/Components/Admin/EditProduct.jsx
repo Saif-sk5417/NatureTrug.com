@@ -1,12 +1,19 @@
 import { Container, Image, Flex, Grid, GridItem, InputGroup, InputRightElement, FormControl, FormLabel, Select, Input, Button, Heading, Box, border } from '@chakra-ui/react'
 import { StarIcon } from '@chakra-ui/icons'
 import { useEffect, useState } from 'react';
+import { GetProduct } from '../../Redux/AdminReducer/action';
+import { useDispatch } from 'react-redux';
+import axios from 'axios';
 
 
 const EditProduct = () => {
     const [dvalue, setDvalue] = useState("");   //default value for edit input from select option
-    const [pid, setPid] = useState(0);              //product id to be searched
-    
+    const [pid, setPid] = useState(0);    
+    const[image,setImage]=useState("")          //product id to be searched
+    const[category,setCategory]=useState("")          //product id to be searched
+    const[price,setPrice]=useState(0)          //product id to be searched
+    const[name,setName]=useState("")          //product id to be searched
+    const dispatch=useDispatch()
 
 
     console.log(pid, dvalue)
@@ -21,14 +28,35 @@ const EditProduct = () => {
         "Weight": "5 kg - Rs 156.00",
         "CartQuantity": 0
     }
-
+ 
+    const newData=()=>{
+       return  axios.patch(`http://localhost:8080/Products/${pid}`, {
+            name: dvalue
+          })
+            .then(res => {
+              console.log(res.data);
+            })
+            .catch(error => {
+              console.log(error);
+            });
+    }
 
     const handleSubmit = () => {
-        
-
+        newData()
     }
+    const GetProduct=(pid)=>{
+        return axios.get(`http://localhost:8080/Products/${pid}`)
+        .then((res)=>{
+            console.log(res)
+            setImage(res.data.Image)
+            setCategory(res.data.category)
+            setPrice(res.data.Price)
+            setName(res.data.name)
+        })
+        .catch((err)=>console.log(err))
+        }
     const handleClick = () => {
-        console.log(pid,dvalue)
+        GetProduct(pid)
     }
 
    
@@ -46,15 +74,15 @@ const EditProduct = () => {
 
                         <FormControl>
                             <Select border={"2px solid #3182CE"} value={dvalue} onChange={(e) => setDvalue(e.target.value)}>
-                                <option value={"name"} difault defaultChecked>Product Name</option>
-                                <option value={"category"}>Product Categoty</option>
-                                <option value={"Price"}>Product Price</option>
-                                <option value={"Image"}>Product Image</option>
+                                <option value={name} onChange={(e) => setDvalue(e.target.value)}>Product Name</option>
+                                <option value={category} onChange={(e) => setDvalue(e.target.value)}>Product Categoty</option>
+                                <option value={price} onChange={(e) => setDvalue(e.target.value)}>Product Price</option>
+                                <option value={image} onChange={(e) => setDvalue(e.target.value)}>Product Image</option>
                             </Select>
                         </FormControl>
 
                         {/* Input */}
-                        <Input colorScheme="blue" border={"2px solid #3182CE"} placeholder={dvalue || "Product Name"} size='md' />
+                        <Input colorScheme="blue" border={"2px solid #3182CE"} placeholder={dvalue || "Product Name" || "Product Category" || "Product Price" || "Product Image"} size='md' onChange={(e)=>setDvalue(e.target.value)} />
 
                         {/* button */}
                         <Button colorScheme="blue" variant={'solid'} maxW="50%" margin={"auto"} onClick={handleSubmit}>Submit</Button>
@@ -77,7 +105,7 @@ const EditProduct = () => {
 
                         {/* product details */}
                         <Box maxW='sm' borderWidth='1px' borderRadius='lg' overflow='hidden' display='flex' m={"auto"}>
-                            <Image src={Product.Image} alt={""} />
+                            <Image src={image} alt={""} />
 
                             <Box p='6'>
                                 <Box
@@ -87,7 +115,7 @@ const EditProduct = () => {
                                     lineHeight='tight'
                                     noOfLines={1}
                                 >
-                                    Name: {Product.name}
+                                    Name: {name}
                                 </Box>
                                 <Box
                                     // mt='1'
@@ -96,11 +124,11 @@ const EditProduct = () => {
                                     lineHeight='tight'
                                     noOfLines={1}
                                 >
-                                    Category: {Product.category}
+                                    Category: {category}
                                 </Box>
 
                                 <Box >
-                                    Price: Rs{Product.Price}
+                                    Price: Rs{price}
                                     {/* <Box as='span' color='gray.600' fontSize='sm'>
                                         / wk
                                     </Box> */}
