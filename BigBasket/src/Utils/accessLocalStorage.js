@@ -1,5 +1,5 @@
  
-const loadData=(key)=>{
+export const getData=(key)=>{
     try{
         let data=JSON.parse(localStorage.getItem(key))
         return data;
@@ -9,7 +9,6 @@ const loadData=(key)=>{
     }
    
 }
-const saveData=(key,sdata)=>{
+export const setData=(key,sdata)=>{
     localStorage.setItem(key,JSON.stringify(sdata));
 }
-export { loadData,saveData }

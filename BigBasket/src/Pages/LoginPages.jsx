@@ -13,49 +13,84 @@ import {
     Image,
     Container,
     Box,
-    Hide
+    Hide,
+    useToast
   } from '@chakra-ui/react';
 import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import {useDispatch} from "react-redux";
 import lo from "../../src/prologo.png"
+import { LOGIN_FAILURE, LOGIN_SUCCESS } from '../Redux/AuthReducer/actionTypes';
   
   export default function Login() {
 
     const [email,setEmail]=useState("");
     const [password,setPassword]=useState("");
     // const dispatch=useDispatch();
-    const navigate = useNavigate();
-    const location = useLocation();
-  
+    const navigate = useNavigate()
+    const location = useLocation()
+    const state = location.state || {data :'/'}
+    console.log(state.data)
+    const toast = useToast()
+    const dispatch = useDispatch()
     const handlelogin=(e)=>{
       e.preventDefault()
-      let userData={
-        email,
-        password
-      }
-    //   dispatch(login(userData)).then(()=>{
-    //     navigate(location.state, { replace: true });
-    //   });
-    if(email==="abc@naturetrug.com" && password==="password"){
-        alert("loginSuccesful");
-        navigate(location.state, { replace: true });
-      }else{
-        alert("email or password does not match");
-      }
+     if(email === 'NatureTrug@user.com' && password ==='@User')
+     {
+      dispatch({type : LOGIN_SUCCESS})
+        navigate(state.data,{replace : true} )
+      toast({
+        position: 'top',
+        title: 'Successful',
+        description: "User Logged in Successfull",
+        status: 'success',
+        duration: 3000,
+        isClosable: true,
+      })
+      setEmail("")
+      setPassword("")
+     }
+     else if (email == 'NatureTrug@admin.com' && password =='@Admin')
+     {
+      dispatch({type : LOGIN_SUCCESS})
+        navigate('/Dashboard' ,{replace : true})
+      toast({
+        position: 'top',
+        title: 'Successful',
+        description: "Admin Logged in Successfull",
+        status: 'success',
+        duration: 3000,
+        isClosable: true,
+      })
+      setEmail("")
+      setPassword("")
+     }
+     else{
+      dispatch({type : LOGIN_FAILURE})
+       toast({
+        position: 'top',
+        title: 'Unuccessful',
+        description: "Wrong Credentials",
+        status: 'error',
+        duration: 3000,
+        isClosable: true,
+      })
+      setEmail("")
+      setPassword("")
+     }
     }
 
     return (
-      <Box bgColor={'#A8C082'} maxH={'sm'}>
+      <Box bgColor={'#84C225'} maxH={'sm'}>
         
       
       {/* <Container maxW='6xl'  centerContent border={"2px solid red"} borderRadius="8px" padding={"10px 50px "}> */}
-      <Stack m="auto" maxW='6xl'maxH={'700px'} direction={{ base: 'column', md: 'row' }} border={"2px solid #84C225"}  backgroundColor={"white"}   >
+      <Stack m="auto" maxW='6xl'maxH={'650px'} direction={{ base: 'column', md: 'row' }}   backgroundColor={"white"}   >
       <Hide below='md'><Flex flex={1}>
       
           <Image
             alt={'Login Image'}
-            boxSize='690px'
+            boxSize='650px'
             // border="2px solid red"
             objectFit={'cover'}
             src={

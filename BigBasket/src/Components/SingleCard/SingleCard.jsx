@@ -110,7 +110,7 @@ import Counter from "./Counter";
             <PopoverContent>
               <PopoverArrow />
               <PopoverCloseButton />
-              <PopoverHeader fontWeight='bold' bg='lightGreen'>Add it to cart First!</PopoverHeader>
+              <PopoverHeader fontWeight='bold' bg='#30d238d9' color ='white'>Add it to cart First!</PopoverHeader>
             </PopoverContent>
           </Popover> 
           : 

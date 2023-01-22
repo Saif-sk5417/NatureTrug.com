@@ -4,17 +4,30 @@ import { IoMdPerson } from "react-icons/io"
 import { FaShoppingBasket } from "react-icons/fa"
 // import lo from "../../src/NATURE.png"
 import lo from "../../src/prologo.png"
-
+import NatureTrug from '../../src/NatureTrug.png'
 import "../Styles/Navbar.css"
 import { NavLink } from "react-router-dom"
+import { useDispatch, useSelector } from "react-redux"
+import { Button } from "@chakra-ui/react"
+import { LOGOUT_SUCCESS } from "../Redux/AuthReducer/actionTypes"
+import { ChevronDownIcon } from "@chakra-ui/icons"
+
 
 
 const Navbar = () => {
+    const Products = useSelector((store) => store.AppReducer.Products)
+    const isAuth = useSelector((store) => store.AuthReducer.isAuth)
+    const items = Products.filter((item) => item.CartQuantity > 0)
+    const dispatch = useDispatch()
+    const handelLogOut = () => {
+        dispatch({type : LOGOUT_SUCCESS})
+        alert('Logout Successfull')
+    }
     return (
         <div>
             <nav id="nav">
                 <div id="logo">
-                    <img src={lo} alt="logo" />
+                    <img src={NatureTrug} alt="logo" />
                 </div>
                 <div id="search">
                     <input id="input" type="text" placeholder="     Search for Product..." />
@@ -25,9 +38,13 @@ const Navbar = () => {
                         <FaShoppingBasket className="icon" />
                     </div>
                     <div>
-                        My Basket
+                        My Basket items : {items.length}
                     </div>
                 </div></NavLink>
+                {isAuth ? <Button 
+                onClick = {handelLogOut}
+                 colorScheme='whatsapp'
+                 >Logout</Button> : 
                 <NavLink to='/Login'><div id="register">
                     {/* <img src="person.png" alt="" /> */}
                     <div>
@@ -35,11 +52,14 @@ const Navbar = () => {
                     </div>
                     <div id="btn">Login</div>
                 </div></NavLink>
+                }
             </nav>
+            
             {/* <img id="arrow" src="newarrow.png" alt="" /> */}
             <div id="sec">
                 <div id="category">
-                    <span id="shop">SHOP BY CATEGORY
+                    <span id="shop">SHOP BY CATEGORY 
+                     <ChevronDownIcon fontSize={25} />
                         <div className="dropdown__menu">
                             <ul>
                                 <NavLink to="/Fruites&Vegetables">  <li type="none" className="list">Fruits & Vegitables
