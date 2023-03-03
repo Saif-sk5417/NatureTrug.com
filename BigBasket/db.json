@@ -9,6 +9,7 @@
       "Price": 156,
       "Weight": "5 kg - Rs 156.00",
       "CartQuantity": 1
+
     },
     {
       "id": 2,
@@ -17,7 +18,7 @@
       "Image": "https://www.bigbasket.com/media/uploads/p/s/40162469_6-fresho-potato-new-crop.jpg",
       "category": "Organic",
       "Price": 84.5,
-      "CartQuantity": 0
+      "CartQuantity": 1
     },
     {
       "id": 3,

@@ -12,6 +12,7 @@ import FoodGrains from "../Pages/FoodGrains"
 import FruitesandVeggies from "../Pages/FruitesandVeggies"
 import HomePages from "../Pages/Homepages"
 import LoginPages from "../Pages/LoginPages"
+import Signup from "../Pages/Signup"
 import SingleProductPage from "../Pages/SingleProductPage"
 
 
@@ -22,6 +23,7 @@ const MainRoutes = () =>
          <Routes>
              <Route path = '/' element={<HomePages />}/>
              <Route path = '/Login' element={<LoginPages />}/>
+             <Route path = '/signup' element={<Signup />}/>
              <Route path = '/Admin' element={<AdminPage />}/>
              <Route path = '/Cart' element={<CartPages />}/>
              <Route path = "/Payment" element={<Payment />}/>
