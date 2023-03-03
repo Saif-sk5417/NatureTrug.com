@@ -28,7 +28,7 @@ This is a Collabrative Project build within 5 days. Created a functional website
 * npm packages
 
 ### Deployed site
-https://unique-heliotrope-35567e.netlify.app
+https://big-basket-sooty.vercel.app
 
 ### SCREENSHOTS
 
