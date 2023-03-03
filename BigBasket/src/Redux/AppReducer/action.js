@@ -3,10 +3,11 @@ import axios from 'axios'
 import CartQuantity from "../../Components/Cart/CartQuantity"
 
 
+
 export const getProductsData = (params) => (dispatch) =>{
     dispatch({type : GET_PRODUCTS_REQUEST})
     return axios
-    .get("http://localhost:8080/Products",params)
+    .get("https://nature-trug-database.vercel.app/Products",params)
     .then((res) => {
         dispatch({type : GET_PRODUCTS_SUCCESS ,payload : res.data})
     })
@@ -15,51 +16,55 @@ export const getProductsData = (params) => (dispatch) =>{
     })
 }
 
+
 export const AddedToCart = (id) =>(dispatch)=>{
    
    return axios
-    .patch(`http://localhost:8080/Products/${id}`,{
-        CartQuantity : 1 ,
-    })
-    .then((res) => {
-   // console.log(res.data)
-    dispatch({type : ADD_TO_CART}) 
-    }
-    )
-}
+     .patch(`https://nature-trug-database.vercel.app/Products/${id}`,{
+         CartQuantity : 1 ,
+     })
+     .then((res) => {
+  
+     dispatch({type : ADD_TO_CART}) 
+     }
+     )
+ }
+ 
 
 
-export const  AddProductQuantity = (id,value) => (dispatch)=>{
-    return axios
-    .patch(`http://localhost:8080/Products/${id}`,{
+export const  AddProductQuantity = (id,value) => async(dispatch)=>{
+    await axios
+    .patch(`https://nature-trug-database.vercel.app/Products/${id}`,{
         CartQuantity : value + 1 ,
     })
     .then((res) => {
-   // console.log(res.data)
+   
     dispatch({type : ADD_QUANTITY}) 
     }
     )
 }
 
-export const  ReduceProductQuantity = (id,value) => (dispatch)=>{
-    return axios
-    .patch(`http://localhost:8080/Products/${id}`,{
+
+export const  ReduceProductQuantity = (id,value) =>  (dispatch)=>{
+     return axios
+    .patch(`https://nature-trug-database.vercel.app/Products/${id}`,{
         CartQuantity : value - 1 ,
     })
     .then((res) => {
-   // console.log(res.data)
+
     dispatch({type : REDUCE_QUANTITY}) 
     }
     )
 }
 
+
 export const RemoveFromCart = (id) =>(dispatch)=>{
     return axios
-     .patch(`http://localhost:8080/Products/${id}`,{
+     .patch(`https://nature-trug-database.vercel.app/Products/${id}`,{
          CartQuantity : 0 ,
      })
      .then((res) => {
-    // console.log(res.data)
+   
      dispatch({type : REMOVE_FROM_CART}) 
      }
      )
