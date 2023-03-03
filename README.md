@@ -9,6 +9,7 @@ This is a Collabrative Project build within 5 days. Created a functional website
 
 * Dropdown Navigation Bar
 * Filter Functionality.
+* Sorting Functionality
 * SignIn/SignOut.
 * Slider.
 * Admin Side.
