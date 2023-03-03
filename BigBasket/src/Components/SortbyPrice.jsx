@@ -4,7 +4,7 @@
 
 import styles from "./ProductPage.module.css"
 
-const SortbyPrice = ({handelSort}) =>{
+const SortbyPrice = ({order,handelSort}) =>{
     return (
         <div>
             <p className={styles.sortby_heading}>Price</p>
@@ -13,8 +13,9 @@ const SortbyPrice = ({handelSort}) =>{
                   <input 
                   type="radio" 
                   value = 'asc'
-                  name = 'sortBy'
+                  name = 'sort_by'
                   onChange={handelSort}
+                  defaultChecked={order==='asc'}
                   />
                   <label>Low To High</label>
              </div>
@@ -22,8 +23,9 @@ const SortbyPrice = ({handelSort}) =>{
                   <input 
                   type="radio" 
                   value = 'desc'
-                  name = 'sortBy'
+                  name = 'sort_by'
                   onChange={handelSort}
+                  defaultChecked={order==='desc'}
                   />
                   <label>High To Low</label>
             </div>

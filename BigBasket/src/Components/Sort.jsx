@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import styles from "./ProductPage.module.css"
-import { SortbyAtoZ } from "./SortbyAtoZ"
-import { SortbyPrice } from "./SortbyPrice"
-import { SortbyRate } from "./SortbyRate"
 
-const Sort = ({handelSort}) =>{
+import { SortbyPrice } from "./SortbyPrice"
+
+
+const Sort = ({order,handelSort}) =>{
     return (
         <div>
            <div>
@@ -14,9 +14,9 @@ const Sort = ({handelSort}) =>{
            <hr className={styles.FilterProduct_hr1}/>
          </div>
          <div className={styles.FilterProduct_Sort_Main}>
-             <SortbyPrice handelSort={handelSort} />
-             <SortbyAtoZ handelSort={handelSort} />
-             <SortbyRate handelSort={handelSort} />
+             <SortbyPrice  order={order} handelSort={handelSort} />
+           
+             
          </div>
         </div>
     )

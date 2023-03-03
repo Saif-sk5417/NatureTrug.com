@@ -10,9 +10,9 @@ const FilterProduct = () =>
 {
   const [searchParams,setSearchParams] = useSearchParams()
   const initialCategory = searchParams.getAll("category")
-  const initialSort = searchParams.getAll("sort")
+  const initialOrder=searchParams.get("order")
   const [category,setcategory] = useState(initialCategory || [])
-  const [sort,setSortby] = useState(initialSort[0] || "")
+  const [order,setOrder] = useState(initialOrder|| "")
   const handelFilterCheckBox = (e) =>{
   const newcategories = [...category]
   if(newcategories.includes(e.target.value))
@@ -26,15 +26,16 @@ const FilterProduct = () =>
   setcategory(newcategories)
   }
   const handelSort = (e) =>{
-    setSortby(e.target.value)
+    setOrder(e.target.value)
   }
-  console.log(sort)
+  
+ 
   useEffect(()=>{
    let params = {}
    params.category = category
-   sort && (params.sort = sort)
+   order && (params.order = order)
    setSearchParams(params)
-  },[category,setSearchParams,sort])
+  },[category,setSearchParams,order])
     return (
         <div className={styles.FilterProduct_Main}>
           <FilterCategory />
@@ -42,7 +43,10 @@ const FilterProduct = () =>
           category={category}
           handelFilterCheckBox ={handelFilterCheckBox}
           />
-          <Sort handelSort={handelSort}/>
+          <Sort
+          order={order}
+           handelSort={handelSort}
+          />
         </div>
     )
 }

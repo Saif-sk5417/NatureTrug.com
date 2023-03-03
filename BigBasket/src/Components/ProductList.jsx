@@ -5,6 +5,7 @@ import styles from './ProductPage.module.css'
 import { RiTruckFill } from 'react-icons/ri'
 import SingleCard from "./SingleCard/SingleCard"
 import { useLocation, useSearchParams } from "react-router-dom"
+import { Box, Heading, Image } from "@chakra-ui/react"
 
 const ProductList = () =>{
     const Products = useSelector((store) => store.AppReducer.Products)
@@ -17,11 +18,14 @@ const ProductList = () =>{
             const getProductParams = {
                 params : {
                     category : searchParams.getAll("category"),
+                    _sort:searchParams.get('order') && 'Price',
+                    
+                    _order: searchParams.get('order')
                 }
             }
             dispatch(getProductsData(getProductParams))
         }
-    },[Products.length , dispatch ,location.search])
+    },[Products.length , dispatch ,location.search,searchParams])
     return (
         <div className={styles.ProductList_Main}>
             <p className={styles.ProductList_Heading}>Fruits & Vegetables ({Products.length})</p>
@@ -31,7 +35,7 @@ const ProductList = () =>{
             </div>
             <hr className={styles.ProductList_Hr1}/>
             <div className={styles.ProductList_SingleCard}>
-                {Products.map((el) =>{
+                {Products.length>0 ? Products.map((el) =>{
                     return(
                         <SingleCard
                          id = {el.id}
@@ -45,7 +49,7 @@ const ProductList = () =>{
                          CartQuantity ={el.CartQuantity}
                         />
                     )
-                })}
+                }) : <Heading color={'green'}>Loading....</Heading>}
             </div>
         </div>
     )
