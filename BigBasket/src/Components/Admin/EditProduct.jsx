@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 import { GetProduct } from '../../Redux/AdminReducer/action';
 import { useDispatch } from 'react-redux';
 import axios from 'axios';
+import { Navbar } from '../Navbar';
+import { Footer } from '../Footer';
 
 
 const EditProduct = () => {
@@ -63,17 +65,18 @@ const EditProduct = () => {
     return (
         
         <Box>
-            <Box bgColor={"#3182CE"} borderRadius="8px" m={"10px"}> <Heading color={"white"}>Add Product</Heading></Box>
+            <Navbar/>
+            <Box bgColor={"rgb(132, 194, 37)"} borderRadius="8px" m={"10px"} mt='180px' p='2'> <Heading color={"white"}>Add Product</Heading></Box>
             <Grid templateColumns={['repeat(1,1fr)', 'repeat(1,1fr)', 'repeat(2, 1fr)']} gap={6} padding="10px">
                 {/* edit Product section */}
                 <GridItem border={"1px solid black"} borderRadius="8px" p="20px" >
                     {/* select tag */}
-                    <Heading mb={"10px"}>Edit Product</Heading>
+                    <Heading mb={"10px"} >Edit Product</Heading>
                     <Flex gap="20px" direction={"column"}>
 
 
                         <FormControl>
-                            <Select border={"2px solid #3182CE"} value={dvalue} onChange={(e) => setDvalue(e.target.value)}>
+                            <Select border={"2px solid rgb(132, 194, 37)"} value={dvalue} onChange={(e) => setDvalue(e.target.value)}>
                                 <option value={name} onChange={(e) => setDvalue(e.target.value)}>Product Name</option>
                                 <option value={category} onChange={(e) => setDvalue(e.target.value)}>Product Categoty</option>
                                 <option value={price} onChange={(e) => setDvalue(e.target.value)}>Product Price</option>
@@ -82,10 +85,10 @@ const EditProduct = () => {
                         </FormControl>
 
                         {/* Input */}
-                        <Input colorScheme="blue" border={"2px solid #3182CE"} placeholder={dvalue || "Product Name" || "Product Category" || "Product Price" || "Product Image"} size='md' onChange={(e)=>setDvalue(e.target.value)} />
+                        <Input colorScheme="blue" border={"2px solid rgb(132, 194, 37)"} placeholder={dvalue || "Product Name" || "Product Category" || "Product Price" || "Product Image"} size='md' onChange={(e)=>setDvalue(e.target.value)} />
 
                         {/* button */}
-                        <Button colorScheme="blue" variant={'solid'} maxW="50%" margin={"auto"} onClick={handleSubmit}>Submit</Button>
+                        <Button bgColor='rgb(132, 194, 37)' variant={'solid'} maxW="50%" margin={"auto"} onClick={handleSubmit}>Submit</Button>
                     </Flex>
                 </GridItem>
 
@@ -96,7 +99,7 @@ const EditProduct = () => {
                         <InputGroup size='md'>
                             <Input
                                 pr='4.5rem'
-                                border={"2px solid #3182CE"}
+                                border={"2px solid rgb(132, 194, 37)"}
                                 placeholder='Enter id' value={pid} onChange={(e) => setPid(e.target.value)} />
                             <InputRightElement width='4.5rem'>
                                 <Button h='1.75rem' size='sm' onClick={handleClick}> Get </Button>
@@ -150,6 +153,7 @@ const EditProduct = () => {
                     </Flex>
                 </GridItem>
             </Grid>
+            <Footer />
         </Box>
     )
 }

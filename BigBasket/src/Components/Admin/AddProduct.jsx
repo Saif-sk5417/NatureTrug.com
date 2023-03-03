@@ -19,6 +19,8 @@ import { StarIcon } from '@chakra-ui/icons'
 import { useState } from 'react';
 import { useDispatch } from "react-redux"
 import { AddProducts } from '../../Redux/AdminReducer/action';
+import { Navbar } from '../Navbar';
+import { Footer } from '../Footer';
 export const AddProduct = () => {
   const [name, setName] = useState("")
   const [category, setCategory] = useState("")
@@ -42,12 +44,13 @@ export const AddProduct = () => {
 
   return (
     <>
+    <Navbar/>
     <Flex
       minH={'100vh'}
       align={'center'}
       justify={'center'}
-      bg={useColorModeValue('gray.50', 'gray.800')}>
-
+      bg={useColorModeValue('gray.50', 'gray.800')} mt='50px'>
+      
       <Stack spacing={8} w='100%' maxW={'2xl'} py={12} px={6} marginLeft={'10%'}>
         <Box
           rounded={'lg'}
@@ -164,6 +167,7 @@ export const AddProduct = () => {
         </CardBody>
       </Card>
     </Flex>
+    <Footer/>
     </>
   );
 }

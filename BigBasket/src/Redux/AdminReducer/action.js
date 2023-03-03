@@ -6,7 +6,7 @@ import { ADD_PRODUCTS_FAILURE, ADD_PRODUCTS_REQUEST, ADD_PRODUCTS_SUCCESS } from
 export const AddProducts = (newProduct) => (dispatch) =>{
     dispatch({type : ADD_PRODUCTS_REQUEST})
     return axios
-    .post("http://localhost:8080/Products",newProduct)
+    .post("https://nature-trug-database.vercel.app/Products",newProduct)
     .then((res) => {
         console.log(res)
         dispatch({type : ADD_PRODUCTS_SUCCESS ,payload : res.data})

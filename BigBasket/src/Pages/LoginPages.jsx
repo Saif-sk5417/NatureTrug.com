@@ -53,7 +53,7 @@ import { LOGIN_FAILURE, LOGIN_SUCCESS } from '../Redux/AuthReducer/actionTypes';
      else if (email == 'NatureTrug@admin.com' && password =='@Admin')
      {
       dispatch({type : LOGIN_SUCCESS})
-        navigate('/Dashboard' ,{replace : true})
+        navigate('/Dash' ,{replace : true})
       toast({
         position: 'top',
         title: 'Successful',

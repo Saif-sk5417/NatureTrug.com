@@ -1,6 +1,7 @@
 import {Navbar} from "../Navbar";
 import { Box, Grid, GridItem ,Heading} from "@chakra-ui/react";
 import { Order } from "./Order";
+import {Link} from 'react-router-dom'
 const Dashboard = () => {
     return (
         <Box boxShadow='rgba(99, 99, 99, 0.2) 0px 2px 8px 0px'>
@@ -8,7 +9,7 @@ const Dashboard = () => {
             <Box h='auto' w='95%' m='auto' mt='180px'  >
                 <Grid templateColumns={'repeat(5,1fr)'} >
                     <GridItem colSpan={1} b p='10px'  >
-                    <Box
+                    <Link to='/Dash'> <Box
                      h="auto"
                      w="100%"
                      m="auto"
@@ -21,7 +22,7 @@ const Dashboard = () => {
                      bgColor="rgb(132, 194, 37)"
                      >
                      <Heading size="lg">Dashboard</Heading>
-                     </Box> 
+                     </Box> </Link>
                      <Box
                      h="auto"
                      w="100%"
@@ -36,7 +37,7 @@ const Dashboard = () => {
                      >
                      <Heading size="lg">Category</Heading>
                      </Box> 
-                     <Box
+                    <Link to='/AddProduct'> <Box
                      h="auto"
                      w="100%"
                      m="auto"
@@ -49,8 +50,8 @@ const Dashboard = () => {
                      bgColor="rgb(132, 194, 37)"
                      >
                      <Heading size="lg">Add Products</Heading>
-                     </Box> 
-                     <Box
+                     </Box> </Link>
+                   <Link to='/EditProduct'> <Box
                      h="auto"
                      w="100%"
                      m="auto"
@@ -63,8 +64,8 @@ const Dashboard = () => {
                      bgColor="rgb(132, 194, 37)"
                      >
                      <Heading size="lg">Edit Products</Heading>
-                     </Box> 
-                     <Box
+                     </Box> </Link> 
+                    <Link to='/Dashboard'><Box
                      h="auto"
                      w="100%"
                      m="auto"
@@ -77,7 +78,7 @@ const Dashboard = () => {
                      bgColor="rgb(132, 194, 37)"
                      >
                      <Heading size="lg">Orders</Heading>
-                     </Box> 
+                     </Box> </Link> 
                     </GridItem>
                     <GridItem colSpan={4} >
                        <Order/>

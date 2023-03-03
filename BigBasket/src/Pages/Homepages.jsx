@@ -25,9 +25,9 @@ const HomePages = () =>
             m='auto'
             >
             <Top/>
-            <CardSlider />
+            {/* <CardSlider /> */}
             <Bank/>
-            <CardSlider2 />
+            {/* <CardSlider2 /> */}
             <Mpopular/>
             <Fruites />
             <BrandStore />
