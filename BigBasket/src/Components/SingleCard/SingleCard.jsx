@@ -98,7 +98,7 @@ import Counter from "./Counter";
             </Text>
           </Stack>
           <Flex mt="20px">
-          {CartQuantity == 0 ? 
+          {CartQuantity === 0 ? 
           <Popover>
           <PopoverTrigger>
           <Button bgColor="rgb(132, 194, 37)">
@@ -121,7 +121,7 @@ import Counter from "./Counter";
            </Button></NavLink>
        }
             <Spacer />
-             {CartQuantity == 0 ? <AddToCart id = {id} /> : <Counter id = {id} CartQuantity ={CartQuantity}/>}
+             {CartQuantity === 0 ? <AddToCart id = {id} /> : <Counter id = {id} CartQuantity ={CartQuantity}/>}
           </Flex>
         </CardBody>
       </Card>

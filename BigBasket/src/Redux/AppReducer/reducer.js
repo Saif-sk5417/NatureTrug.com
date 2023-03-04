@@ -1,56 +1,91 @@
-import { ADD_QUANTITY, ADD_TO_CART, GET_PRODUCTS_FAILURE, GET_PRODUCTS_REQUEST, GET_PRODUCTS_SUCCESS, REMOVE_FROM_CART } from "./actionTypes"
+import { ADD_DAIRY_QUANTITY, ADD_QUANTITY, ADD_TO_CART, DAIRY_PRO_ADD_TO_CART, GET_DAIRY_PRODUCTS_FAILURE, GET_DAIRY_PRODUCTS_REQUEST, GET_DAIRY_PRODUCTS_SUCCESS, GET_PRODUCTS_FAILURE, GET_PRODUCTS_REQUEST, GET_PRODUCTS_SUCCESS, REMOVE_DAIRY_FROM_CART, REMOVE_FROM_CART } from "./actionTypes"
 
 
 const initialState = {
-    Products : [] ,
-    isLoading : false ,
-    isError : false 
+    Products: [],
+    isLoading: false,
+    isError: false
 }
 
-const reducer = (state = initialState,action) =>
-{
-    const {type,payload} = action
-    switch(type)
-    {
-        case GET_PRODUCTS_REQUEST :
-            return{
-                ...state ,
-                isLoading : true
-            }
-        case GET_PRODUCTS_SUCCESS :
+const reducer = (state = initialState, action) => {
+    const { type, payload } = action
+    switch (type) {
+        case GET_PRODUCTS_REQUEST:
             return {
-                ...state ,
-                isLoading : false ,
-                Products : payload ,
-                isError : false 
+                ...state,
+                isLoading: true
             }
-        case GET_PRODUCTS_FAILURE :
+        case GET_PRODUCTS_SUCCESS:
             return {
-                ...state ,
-                isLoading : false ,
-                Products : [] ,
-                isError : false 
+                ...state,
+                isLoading: false,
+                Products: payload,
+                isError: false
             }
-        case ADD_TO_CART :
+        case GET_PRODUCTS_FAILURE:
             return {
-                ...state ,
-                isLoading : false ,
-                isError : false
+                ...state,
+                isLoading: false,
+                Products: [],
+                isError: false
             }
-        case ADD_QUANTITY :
+        case GET_DAIRY_PRODUCTS_REQUEST:
             return {
-                ...state ,
-                isLoading : false ,
-                isError : false 
+                ...state,
+                isLoading: true
             }
-        case REMOVE_FROM_CART :
+        case GET_DAIRY_PRODUCTS_SUCCESS:
             return {
-                ...state ,
-                isLoading : false ,
-                isError : false 
+                ...state,
+                isLoading: false,
+                Products: payload,
+                isError: false
             }
-        default :
-        return state
+        case GET_DAIRY_PRODUCTS_FAILURE:
+            return {
+                ...state,
+                isLoading: false,
+                Products: payload,
+                isError: false
+            }
+        case ADD_TO_CART:
+            return {
+                ...state,
+                isLoading: false,
+                isError: false
+            }
+        case DAIRY_PRO_ADD_TO_CART:
+            return {
+                ...state,
+                isLoading: false,
+                isError: false
+            }
+        case ADD_QUANTITY:
+            return {
+                ...state,
+                isLoading: false,
+                isError: false
+            }
+        case ADD_DAIRY_QUANTITY:
+            return {
+                ...state,
+                isLoading: false,
+                isError: false
+            }
+        case REMOVE_FROM_CART:
+            return {
+                ...state,
+                isLoading: false,
+                isError: false
+            }
+        case REMOVE_DAIRY_FROM_CART:
+            return {
+                ...state,
+                isLoading: false,
+                isError: false
+            }
+        default:
+            return state
     }
 }
- export { reducer }
+export { reducer }

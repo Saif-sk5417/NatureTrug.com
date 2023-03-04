@@ -11,7 +11,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { Button } from "@chakra-ui/react"
 import { LOGOUT_SUCCESS } from "../Redux/AuthReducer/actionTypes"
 import { ChevronDownIcon } from "@chakra-ui/icons"
-
+// import {MilkandDairy} from "../Pages/MilkandDairy"
 
 
 const Navbar = () => {
@@ -20,7 +20,7 @@ const Navbar = () => {
     const items = Products.filter((item) => item.CartQuantity > 0)
     const dispatch = useDispatch()
     const handelLogOut = () => {
-        dispatch({type : LOGOUT_SUCCESS})
+        dispatch({ type: LOGOUT_SUCCESS })
         alert('Logout Successfull')
     }
     return (
@@ -41,25 +41,25 @@ const Navbar = () => {
                         My Basket items : {items.length}
                     </div>
                 </div></NavLink>
-                {isAuth ? <Button 
-                onClick = {handelLogOut}
-                 colorScheme='whatsapp'
-                 >Logout</Button> : 
-                <NavLink to='/Login'><div id="register">
-                    {/* <img src="person.png" alt="" /> */}
-                    <div>
-                        <IoMdPerson />
-                    </div>
-                    <div id="btn">Login</div>
-                </div></NavLink>
+                {isAuth ? <Button
+                    onClick={handelLogOut}
+                    colorScheme='whatsapp'
+                >Logout</Button> :
+                    <NavLink to='/Login'><div id="register">
+                        {/* <img src="person.png" alt="" /> */}
+                        <div>
+                            <IoMdPerson />
+                        </div>
+                        <div id="btn">Login</div>
+                    </div></NavLink>
                 }
             </nav>
-            
+
             {/* <img id="arrow" src="newarrow.png" alt="" /> */}
             <div id="sec">
                 <div id="category">
-                    <span id="shop">SHOP BY CATEGORY 
-                     <ChevronDownIcon fontSize={25} />
+                    <span id="shop">SHOP BY CATEGORY
+                        <ChevronDownIcon fontSize={25} />
                         <div className="dropdown__menu">
                             <ul>
                                 <NavLink to="/Fruites&Vegetables">  <li type="none" className="list">Fruits & Vegitables
@@ -89,7 +89,7 @@ const Navbar = () => {
                                         </ul>
                                     </div>
                                 </li>
-                                <li type="none" className="list">Bakery, Cakes &
+                                <NavLink to="/MilkandDairy">    <li type="none" className="list">Bakery, Cakes &
                                     <div className="dropdown__menu-3">
                                         <ul>
                                             <li className="list" type="none">Breads & Buns</li>
@@ -101,7 +101,7 @@ const Navbar = () => {
                                             <li className="list" type="none">Ice Creams & Desserts</li>
                                         </ul>
                                     </div>
-                                </li>
+                                </li></NavLink>
                                 <li type="none" className="list">Beverages
                                     <div className="dropdown__menu-4">
                                         <ul>
