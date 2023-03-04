@@ -47,7 +47,7 @@ const EditProduct = () => {
         newData()
     }
     const GetProduct=(pid)=>{
-        return axios.get(`http://localhost:8080/Products/${pid}`)
+        return axios.get(`https://nature-trug-database.vercel.app/Products/${pid}`)
         .then((res)=>{
             console.log(res)
             setImage(res.data.Image)

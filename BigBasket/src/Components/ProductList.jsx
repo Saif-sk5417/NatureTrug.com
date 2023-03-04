@@ -19,7 +19,7 @@ const ProductList = () =>{
                 params : {
                     category : searchParams.getAll("category"),
                     _sort:searchParams.get('order') && 'Price',
-                    
+                     name:searchParams.getAll("name"),
                     _order: searchParams.get('order')
                 }
             }
