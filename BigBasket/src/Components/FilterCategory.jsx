@@ -2,9 +2,11 @@
 
 import styles from "./ProductPage.module.css"
 
+
 const FilterCategory = () =>{
     return (
         <div>
+           
             <p className={styles.FilterProduct_heading}>Category</p>
             <div className={styles.FilterProduct_underLine}></div>
             <hr className={styles.FilterProduct_hr1}/>

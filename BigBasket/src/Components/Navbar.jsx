@@ -2,8 +2,7 @@
 import { BsTagsFill } from "react-icons/bs"
 import { IoMdPerson } from "react-icons/io"
 import { FaShoppingBasket } from "react-icons/fa"
-// import lo from "../../src/NATURE.png"
-import lo from "../../src/prologo.png"
+
 import NatureTrug from '../../src/NatureTrug.png'
 import "../Styles/Navbar.css"
 import { NavLink } from "react-router-dom"
@@ -14,7 +13,9 @@ import { ChevronDownIcon } from "@chakra-ui/icons"
 // import {MilkandDairy} from "../Pages/MilkandDairy"
 
 
+
 const Navbar = () => {
+   
     const Products = useSelector((store) => store.AppReducer.Products)
     const isAuth = useSelector((store) => store.AuthReducer.isAuth)
     const items = Products.filter((item) => item.CartQuantity > 0)
@@ -23,6 +24,7 @@ const Navbar = () => {
         dispatch({ type: LOGOUT_SUCCESS })
         alert('Logout Successfull')
     }
+    
     return (
         <div>
             <nav id="nav">
@@ -30,7 +32,7 @@ const Navbar = () => {
                     <img src={NatureTrug} alt="logo" />
                 </div>
                 <div id="search">
-                    <input id="input" type="text" placeholder="     Search for Product..." />
+                    <input id="input" type="text"  placeholder="     Search for name..." />
                     <img id="searchlogo" src="search.png" alt="" />
                 </div>
                 <NavLink to="/Cart"> <div id="basket">
