@@ -77,6 +77,7 @@ const Navbar = () => {
                                         </ul>
                                     </div>
                                 </li></NavLink>
+                                <NavLink to="/FoodGrains"> 
                                 <li type="none" className="list"> Foodgrains, Oil & Masalas
                                     <div className="dropdown__menu-2">
                                         <ul>
@@ -91,6 +92,7 @@ const Navbar = () => {
                                         </ul>
                                     </div>
                                 </li>
+                                </NavLink>
                                 <NavLink to="/MilkandDairy">    <li type="none" className="list">Bakery, Cakes &
                                     <div className="dropdown__menu-3">
                                         <ul>

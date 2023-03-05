@@ -4,7 +4,7 @@ import { Alert, AlertIcon, Button, Flex, Text, useToast } from "@chakra-ui/react
 import { useDispatch } from "react-redux";
 import { AddedToCart, getProductsData } from "../../Redux/AppReducer/action";
 import { CartAlert } from "./Alert";
-import {DairyAddedToCart,getDairyProductsData} from "../../Redux/AppReducer/action"
+import {DairyAddedToCart,getDairyProductsData,getFoodProductsData,FoodAddedToCart} from "../../Redux/AppReducer/action"
 const AddToCart = ({id}) => {
   const dispatch = useDispatch()
   const toast = useToast()
@@ -28,6 +28,20 @@ const AddToCart = ({id}) => {
       dispatch(DairyAddedToCart(id))
       .then(()=>{ 
         dispatch(getDairyProductsData())
+        toast({
+          position: 'top',
+          title: 'Added',
+          description: "Product Added to Cart.",
+          status: 'success',
+          duration: 3000,
+          isClosable: true,
+        })
+      })
+    }
+    {
+      dispatch(FoodAddedToCart(id))
+      .then(()=>{ 
+        dispatch(getFoodProductsData())
         toast({
           position: 'top',
           title: 'Added',

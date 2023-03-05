@@ -1,7 +1,7 @@
 import { Flex, Button, Spacer, Text, useToast } from "@chakra-ui/react";
 import { useDispatch } from "react-redux";
 import { AddProductQuantity, getProductsData, ReduceProductQuantity } from "../../Redux/AppReducer/action";
-import { AddDairyProductQuantity, getDairyProductsData, ReduceDairyProductQuantity } from "../../Redux/AppReducer/action";
+import { AddDairyProductQuantity, getDairyProductsData, ReduceDairyProductQuantity,AddFoodProductQuantity,getFoodProductsData,ReduceFoodProductQuantity } from "../../Redux/AppReducer/action";
 const Counter = ({ id, CartQuantity }) => {
   const dispatch = useDispatch()
   const toast = useToast()
@@ -18,6 +18,13 @@ const Counter = ({ id, CartQuantity }) => {
         dispatch(AddDairyProductQuantity(id, CartQuantity))
           .then((res) => {
             dispatch(getDairyProductsData())
+
+          })
+      }
+      if (CartQuantity < 4) {
+        dispatch(AddFoodProductQuantity(id, CartQuantity))
+          .then((res) => {
+            dispatch(getFoodProductsData())
 
           })
       }
@@ -45,6 +52,12 @@ const Counter = ({ id, CartQuantity }) => {
         dispatch(ReduceDairyProductQuantity(id, CartQuantity))
           .then((res) => {
             dispatch(getDairyProductsData())
+          })
+      }
+      if (CartQuantity > 0) {
+        dispatch(ReduceFoodProductQuantity(id, CartQuantity))
+          .then((res) => {
+            dispatch(getFoodProductsData())
           })
       }
     }
