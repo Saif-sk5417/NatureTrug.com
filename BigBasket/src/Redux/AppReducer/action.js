@@ -7,7 +7,7 @@ import CartQuantity from "../../Components/Cart/CartQuantity"
 export const getProductsData = (params) => (dispatch) =>{
     dispatch({type : GET_PRODUCTS_REQUEST})
     return axios
-    .get("https://nature-trug-database.vercel.app/Products",params)
+    .get("https://naturetest.onrender.com/Products",params)
     .then((res) => {
         dispatch({type : GET_PRODUCTS_SUCCESS ,payload : res.data})
     })
@@ -22,7 +22,7 @@ export const getProductsData = (params) => (dispatch) =>{
 export const AddedToCart = (id) =>(dispatch)=>{
    
    return axios
-     .patch(`https://nature-trug-database.vercel.app/Products/${id}`,{
+     .patch(`https://naturetest.onrender.com/Products/${id}`,{
          CartQuantity : 1 ,
      })
      .then((res) => {
@@ -36,7 +36,7 @@ export const AddedToCart = (id) =>(dispatch)=>{
 
 export const  AddProductQuantity = (id,value) => async(dispatch)=>{
     await axios
-    .patch(`https://nature-trug-database.vercel.app/Products/${id}`,{
+    .patch(`https://naturetest.onrender.com/Products/${id}`,{
         CartQuantity : value + 1 ,
     })
     .then((res) => {
@@ -49,7 +49,7 @@ export const  AddProductQuantity = (id,value) => async(dispatch)=>{
 
 export const  ReduceProductQuantity = (id,value) =>  (dispatch)=>{
      return axios
-    .patch(`https://nature-trug-database.vercel.app/Products/${id}`,{
+    .patch(`https://naturetest.onrender.com/Products/${id}`,{
         CartQuantity : value - 1 ,
     })
     .then((res) => {
@@ -62,7 +62,7 @@ export const  ReduceProductQuantity = (id,value) =>  (dispatch)=>{
 
 export const RemoveFromCart = (id) =>(dispatch)=>{
     return axios
-     .patch(`https://nature-trug-database.vercel.app/Products/${id}`,{
+     .patch(`https://naturetest.onrender.com/Products/${id}`,{
          CartQuantity : 0 ,
      })
      .then((res) => {
