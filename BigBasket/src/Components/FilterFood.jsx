@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from "./ProductPage.module.css"
+
 import { useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { FoodBrand } from './FoodBrand'
@@ -60,6 +61,11 @@ const FilterFood = () => {
             handelFilter={handelFilter}/>
           <div>
 
+
+const FilterFood = () => {
+  return (
+    <div>
+
     <p className={styles.FilterProduct_heading}>Category</p>
     <div className={styles.FilterProduct_underLine}></div>
     <hr className={styles.FilterProduct_hr1}/>
@@ -83,6 +89,7 @@ const FilterFood = () => {
           />
          
         </div>
+
    </div>
   )
 }

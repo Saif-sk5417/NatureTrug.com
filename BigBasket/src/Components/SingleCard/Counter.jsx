@@ -20,7 +20,11 @@ const Counter = ({ id, CartQuantity }) => {
 
           })
       }
+
      else if (CartQuantity < 4) {
+
+     
+
         dispatch(AddFoodProductQuantity(id, CartQuantity))
           .then((res) => {
             dispatch(getFoodProductsData())
