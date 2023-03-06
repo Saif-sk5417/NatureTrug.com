@@ -18,7 +18,9 @@ const FoodList = () => {
                 params : {
                     category : searchParams.getAll("category"),
                     _sort:searchParams.get('order') && 'Price',
-                    
+
+                     name:searchParams.getAll("name"),
+
                     _order: searchParams.get('order')
                 }
             }
@@ -40,7 +42,11 @@ const FoodList = () => {
                  id = {el.id}
                  key = {el.id}  
                  name = {el.name}
-                 image = {el.image}
+
+                 image = {el.Image}
+
+               
+
                  Price = {el.Price}
                  Category = {el.category}
                  Weights = {el.Weight}

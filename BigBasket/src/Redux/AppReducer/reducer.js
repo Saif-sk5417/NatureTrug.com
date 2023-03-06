@@ -3,6 +3,7 @@ import {REMOVE_FOOD_FROM_CART, REDUCE_FOOD_QUANTITY, ADD_FOOD_QUANTITY, FOOD_PRO
 
 const initialState = {
     Products: [],
+    Food:[],
     isLoading: false,
     isError: false
 }
