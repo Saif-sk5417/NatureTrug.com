@@ -31,6 +31,10 @@ This is a Collabrative Project build within 5 days. Created a functional website
 ### Deployed site
 https://big-basket-vaishu0428.vercel.app
 
+### Admin Side Credentials
+Email : NatureTrug@admin.com
+Pass : @Admin
+
 ### SCREENSHOTS
 
 ![Screenshot (262)](https://snipboard.io/B5ZpwQ.jpg)
