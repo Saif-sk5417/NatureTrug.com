@@ -5,6 +5,7 @@ import Counter from './SingleCard/Counter';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { getProductsData, RemoveFromCart } from '../Redux/AppReducer/action';
+
 import { useState } from 'react';
 const Cart = ({name,Weight,image,id,CartQuantity,price,handelCartDelete}) => {
    const handelDelete = () =>{

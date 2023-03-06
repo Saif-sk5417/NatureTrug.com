@@ -12,6 +12,7 @@ import { getProductsData, RemoveFromCart } from "../Redux/AppReducer/action";
 import { useEffect } from "react";
 import { useToast } from "react-toastify";
 import { EmptyCart } from "../Components/Cart/EmptyCart";
+import { getDairyProductsData, RemoveDairyFromCart } from '../Redux/AppReducer/action';
 const CartPages = () =>
 {
    const Products = useSelector((store) => store.AppReducer.Products)
@@ -24,6 +25,12 @@ const CartPages = () =>
      .then(()=>{
         dispatch(getProductsData())
      })
+    }
+    if(id){
+        dispatch(RemoveDairyFromCart(id))
+        .then(()=>{
+           dispatch(getDairyProductsData())
+        })  
     }
 }
    useEffect(()=>{

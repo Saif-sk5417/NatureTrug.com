@@ -13,8 +13,7 @@ const Counter = ({ id, CartQuantity }) => {
             dispatch(getProductsData())
 
           })
-      } 
-       if (CartQuantity < 4) {
+      } else if (CartQuantity < 4) {
         dispatch(AddDairyProductQuantity(id, CartQuantity))
           .then((res) => {
             dispatch(getDairyProductsData())
