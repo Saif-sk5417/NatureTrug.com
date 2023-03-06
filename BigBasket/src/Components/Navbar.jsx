@@ -2,7 +2,7 @@
 import { BsTagsFill } from "react-icons/bs"
 import { IoMdPerson } from "react-icons/io"
 import { FaShoppingBasket } from "react-icons/fa"
-
+import Search from "./Search"
 import NatureTrug from '../../src/NatureTrug.png'
 import "../Styles/Navbar.css"
 import { NavLink } from "react-router-dom"
@@ -34,6 +34,7 @@ const Navbar = () => {
                 <div id="search">
                     <input id="input" type="text"  placeholder="     Search for name..." />
                     <img id="searchlogo" src="search.png" alt="" />
+                   
                 </div>
                 <NavLink to="/Cart"> <div id="basket">
                     <div>

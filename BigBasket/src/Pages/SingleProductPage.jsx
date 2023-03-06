@@ -39,7 +39,7 @@ const SingleProductPage = () => {
     useEffect(() => {
         if (id) {
             const single = Products.find((el) => el.id === Number(id))
-            console.log(single)
+          
             single && setSingleProduct(single)
         }
     }, [id])

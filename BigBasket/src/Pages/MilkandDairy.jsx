@@ -8,19 +8,7 @@ import { Navbar } from '../Components/Navbar'
 import styles from '../Components/ProductPage.module.css'
 import { Sort } from '../Components/Sort'
 const MilkandDairy = () => {
-    // const [searchParams, setSearchParams] = useSearchParams()
-    // const initialOrder = useSearchParams.get("order")
-    // const [order, setOrder] = useState(initialOrder || "")
-
-    // useEffect(() => {
-    //     let params = {}
-    //     order && (params.order = order)
-    //     setSearchParams(params)
-    // }, [setSearchParams, order])
-
-    // const handelSort = (e) => {
-    //     setOrder(e.target.value)
-    // }
+    
     return (
         <>
             <div>
@@ -31,8 +19,7 @@ const MilkandDairy = () => {
                 <div className={styles.ProductPage_main}>
                     <FilterDairy />
                     <DairyList />
-                    {/* <Sort order={order}
-                        handelSort={handelSort} /> */}
+                   
                 </div>
             </div>
             <div>
