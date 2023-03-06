@@ -40,7 +40,7 @@ const DairyList = () => {
                  id = {el.id}
                  key = {el.id}  
                  name = {el.name}
-                 image = {el.Image}
+                 image = {el.image}
                  Price = {el.Price}
                  Category = {el.category}
                  Weights = {el.Weight}

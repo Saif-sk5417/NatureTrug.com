@@ -62,9 +62,9 @@ const FilterFood = () => {
           <div>
 
 
-const FilterFood = () => {
-  return (
-    <div>
+
+
+  
 
     <p className={styles.FilterProduct_heading}>Category</p>
     <div className={styles.FilterProduct_underLine}></div>
