@@ -29,7 +29,7 @@ This is a Collabrative Project build within 5 days. Created a functional website
 * npm packages
 
 ### Deployed site
-https://big-basket-vaishu0428.vercel.app/
+https://big-basket-vaishu0428.vercel.app
 
 ### SCREENSHOTS
 
